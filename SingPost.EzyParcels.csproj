@@ -1,0 +1,2424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ECDBC37E-B01B-48F1-9176-7B1CA6F72A4A}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SingPost.EzyParcels</RootNamespace>
+    <AssemblyName>SingPost.EzyParcels</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <DesktopBuildPackageLocation>C:\Users\sourabh.b\Documents\Ezyparcels\</DesktopBuildPackageLocation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNetSamples_Nvp, Version=1.0.3947.27122, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AspNetSamples_Nvp.dll</HintPath>
+    </Reference>
+    <Reference Include="BasicAuthMod, Version=1.0.907.24260, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\BasicAuthMod.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="IDAutomation.NetAssembly, Version=2009.0.0.0, Culture=neutral, PublicKeyToken=b734e31dca085caa">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IDAutomation.NetAssembly.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.3.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\exiblr-d-168\Shared\exception and mailer\Exilant.EzyParcel.ExceptionHandling\bin\Release\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging">
+      <HintPath>\\exiblr-d-168\Shared\exception and mailer\Exilant.EzyParcel.ExceptionHandling\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging.Database, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\exiblr-d-168\Shared\exception and mailer\Exilant.EzyParcel.ExceptionHandling\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>\\exiblr-d-168\Shared\exception and mailer\Exilant.EzyParcel.ExceptionHandling\bin\Release\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>\\exiblr-d-168\Shared\exception and mailer\Exilant.EzyParcel.ExceptionHandling\bin\Release\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>\\exiblr-d-168\Shared\exception and mailer\Exilant.EzyParcel.ExceptionHandling\bin\Release\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="paypal_base, Version=5.6.65.1, Culture=neutral, PublicKeyToken=b37401294aaf5617">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\paypal_base.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.31.1789.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.resources, Version=1.31.1789.0, Culture=de, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\PdfSharp.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Recaptcha, Version=1.0.5.0, Culture=neutral, PublicKeyToken=9afc4d65b28c38c2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Recaptcha.dll</HintPath>
+    </Reference>
+    <Reference Include="SingPost.EzyParcels.BatchProcessCoreLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SingPost.EzyParcels.BatchProcessCoreLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="SingPost.EzyParcels.EmailNotifications, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SingPost.EzyParcels.EmailNotifications.dll</HintPath>
+    </Reference>
+    <Reference Include="SingPost.EzyParcels.EmailNotificationsCoreLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SingPost.EzyParcels.EmailNotificationsCoreLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="SingPost.EzyParcels.ExceptionHandling, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SingPost.EzyParcels.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="SingPost.EzyParcels.ReportGeneration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SingPost.EzyParcels.ReportGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="SingPost.EzyParcels.ReportGenerationCoreLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SingPost.EzyParcels.ReportGenerationCoreLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="SingPost.EzyParcels.RoutingMatrixCoreLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SingPost.EzyParcels.RoutingMatrixCoreLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="SingPost.EzyParcels.TrackingNumberGenerationCoreLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SingPost.EzyParcels.TrackingNumberGenerationCoreLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="SingPost.EzyParcelsEF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SingPost.EzyParcelsEF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.2\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationCode\CaptchaValidatorAttribute.cs" />
+    <Compile Include="ApplicationCode\ClsEncodeDecode.cs" />
+    <Compile Include="ApplicationCode\ClsGenericErrors.cs" />
+    <Compile Include="ApplicationCode\ClsInternalEMailer.cs" />
+    <Compile Include="ApplicationCode\ClsManualTrackingRange.cs" />
+    <Compile Include="ApplicationCode\ClsSelectedFunctionality.cs" />
+    <Compile Include="ApplicationCode\ClsTrackingRange.cs" />
+    <Compile Include="ApplicationCode\ClsVarianceHandling.cs" />
+    <Compile Include="ApplicationCode\ClsWordToHtml.cs" />
+    <Compile Include="ApplicationCode\ConsolidationReports.cs" />
+    <Compile Include="ApplicationCode\EBay\AbstractEBayAPIObject.cs" />
+    <Compile Include="ApplicationCode\EBay\EBayAPIErrorCodes.cs" />
+    <Compile Include="ApplicationCode\EBay\EBayAPIException.cs" />
+    <Compile Include="ApplicationCode\EBay\EBayOrder.cs" />
+    <Compile Include="ApplicationCode\EBay\EBayOrders.cs" />
+    <Compile Include="ApplicationCode\EBay\EBayUser.cs" />
+    <Compile Include="ApplicationCode\GetDataSetForLWMSRpts.cs" />
+    <Compile Include="ApplicationCode\OrdersBO.cs" />
+    <Compile Include="ApplicationCode\Paypal.cs" />
+    <Compile Include="ApplicationCode\PostPaypalPayment.cs" />
+    <Compile Include="ApplicationCode\RestAPICall.cs" />
+    <Compile Include="ApplicationCode\RoutingMatrixBulkUploadEntry.cs" />
+    <Compile Include="ApplicationCode\ServiceAgent.cs" />
+    <Compile Include="ApplicationCode\TrackAndTrace.cs" />
+    <Compile Include="ApplicationCode\ValidationsRules.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="EbayAndBulkUploadTemplate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EbayAndBulkUploadTemplate.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\BackOfficeController.cs" />
+    <Compile Include="Controllers\CustomerPortalController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BackOfficeModels\BackOfficeReport.cs" />
+    <Compile Include="Models\BackOfficeModels\BackOfficeViewModel.cs" />
+    <Compile Include="Models\BackOfficeModels\DownloadsConfiguration.cs" />
+    <Compile Include="Models\BackOfficeModels\EmailLogDetails.cs" />
+    <Compile Include="Models\BackOfficeModels\FAQConfiguration.cs" />
+    <Compile Include="Models\BackOfficeModels\ManualTrackingRangeAllocationModel.cs" />
+    <Compile Include="Models\BackOfficeModels\ProfileManagement.cs" />
+    <Compile Include="Models\BackOfficeModels\RoutingMatrixModel.cs" />
+    <Compile Include="Models\BackOfficeModels\SendCommunication.cs" />
+    <Compile Include="Models\BackOfficeModels\TrackingRangeAllocationModel.cs" />
+    <Compile Include="Models\CommonModels\ChangePassword.cs" />
+    <Compile Include="ApplicationCode\EncryptDecrypt.cs" />
+    <Compile Include="Models\CommonModels\FAQ.cs" />
+    <Compile Include="Models\CommonModels\ForgotPassword.cs" />
+    <Compile Include="Models\CommonModels\PostageCalculator.cs" />
+    <Compile Include="ApplicationCode\Report.cs" />
+    <Compile Include="ApplicationCode\User.cs" />
+    <Compile Include="ApplicationCode\UserRegistration.cs" />
+    <Compile Include="Models\CommonModels\BulkUploadViewModel.cs" />
+    <Compile Include="Models\CommonModels\ValidateTraceandTrack.cs" />
+    <Compile Include="Models\CustomerPortalModels\ClsUserProfile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\CustomerPortalModels\DownloadsModel.cs" />
+    <Compile Include="Models\CustomerPortalModels\ContactUsHelper.cs" />
+    <Compile Include="Models\CustomerPortalModels\ContactUsModel.cs" />
+    <Compile Include="Models\CustomerPortalModels\Ebay.cs" />
+    <Compile Include="Models\CustomerPortalModels\OfficeHolidayModel.cs" />
+    <Compile Include="Models\CustomerPortalModels\PickUpAddressModel.cs" />
+    <Compile Include="Models\CustomerPortalModels\SubAccountPrivileges.cs" />
+    <Compile Include="Models\CustomerPortalModels\UserModel.cs" />
+    <Compile Include="Models\CustomerPortalModels\IndexViewModel.cs" />
+    <Compile Include="Models\Orders.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\cn22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cn22.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\cn22_AU1.cs">
+      <DependentUpon>cn22_AU.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\cn22_compact1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cn22_compact.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\cn22_compact_SG1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cn22_compact_SG.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\cn22_SG1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cn22_SG.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\cn22_US1.cs">
+      <DependentUpon>cn22_US.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\Commercialinvoice.cs">
+      <DependentUpon>Commercialinvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\connote1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>connote.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\connoteairparcel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>connoteairparcel.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\mainfest.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mainfest.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\rejectiontransactiondetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rejectiontransactiondetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\TaxInvoice.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TaxInvoice.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDataSource.cs" />
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="bin\AspNetSamples_Nvp.dll" />
+    <Content Include="bin\bin\SingPost.EzyParcelsEF.dll" />
+    <Content Include="bin\bin\System.Web.Helpers.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\IDAutomation.NetAssembly.dll" />
+    <Content Include="bin\itextsharp.dll" />
+    <Content Include="bin\log4net.dll" />
+    <Content Include="bin\Microsoft.Office.Interop.Word.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Caching.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll" />
+    <Content Include="bin\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="bin\Microsoft.Practices.Unity.dll" />
+    <Content Include="bin\Microsoft.Practices.Unity.Interception.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Office.dll" />
+    <Content Include="bin\paypal_base.dll" />
+    <Content Include="bin\PdfSharp.dll" />
+    <Content Include="bin\PdfSharp.resources.dll" />
+    <Content Include="bin\Recaptcha.dll" />
+    <Content Include="bin\SingPost.EzyParcels.BatchProcessCoreLogic.dll" />
+    <Content Include="bin\SingPost.EzyParcels.BatchProcessCoreLogic.pdb" />
+    <Content Include="bin\SingPost.EzyParcels.dll" />
+    <Content Include="bin\SingPost.EzyParcels.EmailNotifications.dll" />
+    <Content Include="bin\SingPost.EzyParcels.EmailNotificationsCoreLogic.dll" />
+    <Content Include="bin\SingPost.EzyParcels.EmailNotificationsCoreLogic.pdb" />
+    <Content Include="bin\SingPost.EzyParcels.ExceptionHandling.dll" />
+    <Content Include="bin\SingPost.EzyParcels.pdb" />
+    <Content Include="bin\SingPost.EzyParcels.ReportGenerationCoreLogic.dll" />
+    <Content Include="bin\SingPost.EzyParcels.ReportGenerationCoreLogic.pdb" />
+    <Content Include="bin\SingPost.EzyParcels.RoutingMatrixCoreLogic.dll" />
+    <Content Include="bin\SingPost.EzyParcels.TrackingNumberGenerationCoreLogic.dll" />
+    <Content Include="bin\SingPost.EzyParcelsEF.dll" />
+    <Content Include="bin\SingPost.EzyParcelsEF.pdb" />
+    <Content Include="bin\System.Net.Http.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Net.Http.WebRequest.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.SelfHost.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="bin\WebMatrix.Data.dll" />
+    <Content Include="bin\WebMatrix.WebData.dll" />
+    <Content Include="Content\Styles\AdminCss\adminBO.css" />
+    <Content Include="Content\Styles\AdminCss\BulkUpload.css" />
+    <Content Include="Content\Styles\AdminCss\chosen_styles.css" />
+    <Content Include="Content\Styles\AdminCss\datagrid.css" />
+    <Content Include="Content\Styles\AdminCss\forms.css" />
+    <Content Include="Content\Styles\AdminCss\jquery-ui.css" />
+    <Content Include="Content\Styles\AdminCss\layout.css" />
+    <Content Include="Content\Styles\AdminCss\le-frog\jquery-ui.css" />
+    <Content Include="Content\Styles\AdminCss\le-frog\jquery.ui.theme.css" />
+    <Content Include="Content\Styles\AdminCss\main.css" />
+    <Content Include="Content\Styles\AdminCss\ManualTrackingAllocation.css" />
+    <Content Include="Content\Styles\AdminCss\MasterCodeConfiguration.css" />
+    <Content Include="Content\Styles\AdminCss\normalize.css" />
+    <Content Include="Content\Styles\AdminCss\OrderEntry.css" />
+    <Content Include="Content\Styles\AdminCss\reportlayout.css" />
+    <Content Include="Content\Styles\AdminCss\TrackingRangeAllocation.css" />
+    <Content Include="Content\Styles\chosen_styles.css" />
+    <Content Include="Content\Styles\datagrid.css" />
+    <Content Include="Content\Styles\forms.css" />
+    <Content Include="Content\Styles\jquery-te-1.4.0.css" />
+    <Content Include="Content\Styles\jquery-ui.css" />
+    <Content Include="Content\Styles\layout.css" />
+    <Content Include="Content\Styles\le-frog\jquery-ui.css" />
+    <Content Include="Content\Styles\le-frog\jquery.ui.theme.css" />
+    <Content Include="Content\Styles\main.css" />
+    <Content Include="Content\Styles\normalize.css" />
+    <Content Include="Content\Styles\tutorials.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\Accepting_paypal.gif" />
+    <Content Include="Images\Add-Icon.png" />
+    <Content Include="Images\add_order.png" />
+    <Content Include="Images\Arrow Down.png" />
+    <Content Include="Images\arrow.jpg" />
+    <Content Include="Images\Arrow.png" />
+    <Content Include="Images\arrow2.jpg" />
+    <Content Include="Images\arrow2.png" />
+    <Content Include="Images\arrow3.png" />
+    <Content Include="Images\arrowdown.PNG" />
+    <Content Include="Images\ArrowL2.png" />
+    <Content Include="Images\arrowleft.PNG" />
+    <Content Include="Images\arrownext.png" />
+    <Content Include="Images\arrowprev.png" />
+    <Content Include="Images\arrowup.png" />
+    <Content Include="Images\Arrow_Down.png" />
+    <Content Include="Images\arrow_right.png" />
+    <Content Include="Images\AU-Flag.png" />
+    <Content Include="Images\australia.jpg" />
+    <Content Include="Images\Australia.png" />
+    <Content Include="Images\back.png" />
+    <Content Include="Images\bnr_nowAccepting_paypal.gif" />
+    <Content Include="Images\bulkorder.png" />
+    <Content Include="Images\bulk_order.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\buttons-14.png" />
+    <Content Include="Images\buttons-15.png" />
+    <Content Include="Images\buttons-16.png" />
+    <Content Include="Images\buttons-20.PNG" />
+    <Content Include="Images\buttons_05.png" />
+    <Content Include="Images\buttons_07.png" />
+    <Content Include="Images\buttons_09.png" />
+    <Content Include="Images\buttons_13.png" />
+    <Content Include="Images\calculator.jpg" />
+    <Content Include="Images\calculator.png" />
+    <Content Include="Images\calendar.jpg" />
+    <Content Include="Images\calendar.png" />
+    <Content Include="Images\calendar1.png" />
+    <Content Include="Images\calender_track.png" />
+    <Content Include="Images\call.png" />
+    <Content Include="Images\call_email.jpg" />
+    <Content Include="Images\Cancel-Icon-.png" />
+    <Content Include="Images\Cancel-icon-102.png" />
+    <Content Include="Images\cancel.png" />
+    <Content Include="Images\CancelIcon.png" />
+    <Content Include="Images\Cancel_Icon.png" />
+    <Content Include="Images\Checked_03.png" />
+    <Content Include="Images\check_box.jpg" />
+    <Content Include="Images\chosen-sprite.png" />
+    <Content Include="Images\circle_arrow.png" />
+    <Content Include="Images\circle_arrow_down.png" />
+    <Content Include="Images\clearall.png" />
+    <Content Include="Images\close-icon-010.png" />
+    <Content Include="Images\Close-icon-011-.png" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\close_icon.png" />
+    <Content Include="Images\company.png" />
+    <Content Include="Images\company_dev.jpg" />
+    <Content Include="Images\confirm.png" />
+    <Content Include="Images\continue.png" />
+    <Content Include="Images\convert.jpg" />
+    <Content Include="Images\create_work_order.jpg" />
+    <Content Include="Images\CreatWorkOrder_icon.png" />
+    <Content Include="Images\cross-service-icon.png" />
+    <Content Include="Images\default_logo.jpg" />
+    <Content Include="Images\Delete-icon-103.png" />
+    <Content Include="Images\Delete.png" />
+    <Content Include="Images\Delete_normal_icon.png" />
+    <Content Include="Images\delivered.jpg" />
+    <Content Include="Images\dollar.png" />
+    <Content Include="Images\dollars.jpg" />
+    <Content Include="Images\download2.png" />
+    <Content Include="Images\downloads.jpg" />
+    <Content Include="Images\downloads.png" />
+    <Content Include="Images\Dropdown--Gray.png" />
+    <Content Include="Images\dropdown.jpg" />
+    <Content Include="Images\dropdown2.jpg" />
+    <Content Include="Images\ebay-icon.png" />
+    <Content Include="Images\ebay.jpg" />
+    <Content Include="Images\ebay.png" />
+    <Content Include="Images\edit-icon-0001.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\editIcon.png" />
+    <Content Include="Images\edit_normal_icon.png" />
+    <Content Include="Images\Erroricon404.PNG" />
+    <Content Include="Images\excel1.png" />
+    <Content Include="Images\excel2.png" />
+    <Content Include="Images\excel3.png" />
+    <Content Include="Images\ezyicon.png" />
+    <Content Include="Images\ezy_favicon.ico" />
+    <Content Include="Images\faq.jpg" />
+    <Content Include="Images\faq.png" />
+    <Content Include="Images\fax-Icon.png" />
+    <Content Include="Images\fax.png" />
+    <Content Include="Images\filter.png" />
+    <Content Include="Images\first.png" />
+    <Content Include="Images\Fix-Schedulr-icon.png" />
+    <Content Include="Images\grid_bg.jpg" />
+    <Content Include="Images\HK-Flag.png" />
+    <Content Include="Images\Hong-Kong.png" />
+    <Content Include="Images\hongkong.jpg" />
+    <Content Include="Images\hongkong.png" />
+    <Content Include="Images\h_sep.jpg" />
+    <Content Include="Images\icons_03.png" />
+    <Content Include="Images\icons_09.png" />
+    <Content Include="Images\ImgNew\Accepting_paypal.gif" />
+    <Content Include="Images\ImgNew\Add-Icon.png" />
+    <Content Include="Images\ImgNew\add_order.png" />
+    <Content Include="Images\ImgNew\Arrow Down.png" />
+    <Content Include="Images\ImgNew\arrow.jpg" />
+    <Content Include="Images\ImgNew\Arrow.png" />
+    <Content Include="Images\ImgNew\arrow2.jpg" />
+    <Content Include="Images\ImgNew\arrow2.png" />
+    <Content Include="Images\ImgNew\arrow6.png" />
+    <Content Include="Images\ImgNew\arrowdown.PNG" />
+    <Content Include="Images\ImgNew\ArrowL2.png" />
+    <Content Include="Images\ImgNew\arrowleft.PNG" />
+    <Content Include="Images\ImgNew\arrownext.png" />
+    <Content Include="Images\ImgNew\arrowprev.png" />
+    <Content Include="Images\ImgNew\arrowup.png" />
+    <Content Include="Images\ImgNew\Arrow_Down.png" />
+    <Content Include="Images\ImgNew\arrow_right.png" />
+    <Content Include="Images\ImgNew\AU-Flag.png" />
+    <Content Include="Images\ImgNew\australia.jpg" />
+    <Content Include="Images\ImgNew\Australia.png" />
+    <Content Include="Images\ImgNew\back.png" />
+    <Content Include="Images\ImgNew\bnr_nowAccepting_paypal.gif" />
+    <Content Include="Images\ImgNew\bulkorder.png" />
+    <Content Include="Images\ImgNew\bulk_order.png" />
+    <Content Include="Images\ImgNew\bullet.png" />
+    <Content Include="Images\ImgNew\buttons-14.png" />
+    <Content Include="Images\ImgNew\buttons-15.png" />
+    <Content Include="Images\ImgNew\buttons-16.png" />
+    <Content Include="Images\ImgNew\buttons-20.PNG" />
+    <Content Include="Images\ImgNew\buttons_05.png" />
+    <Content Include="Images\ImgNew\buttons_07.png" />
+    <Content Include="Images\ImgNew\buttons_09.png" />
+    <Content Include="Images\ImgNew\buttons_13.png" />
+    <Content Include="Images\ImgNew\calculator.jpg" />
+    <Content Include="Images\ImgNew\calculator.png" />
+    <Content Include="Images\ImgNew\calculator2.png" />
+    <Content Include="Images\ImgNew\calendar.jpg" />
+    <Content Include="Images\ImgNew\calendar.png" />
+    <Content Include="Images\ImgNew\calendar1.png" />
+    <Content Include="Images\ImgNew\calender_track.png" />
+    <Content Include="Images\ImgNew\call.png" />
+    <Content Include="Images\ImgNew\call_email.jpg" />
+    <Content Include="Images\ImgNew\call_email.png" />
+    <Content Include="Images\ImgNew\Cancel-Icon-.png" />
+    <Content Include="Images\ImgNew\Cancel-icon-102.png" />
+    <Content Include="Images\ImgNew\cancel.png" />
+    <Content Include="Images\ImgNew\CancelIcon.png" />
+    <Content Include="Images\ImgNew\Cancel_Icon.png" />
+    <Content Include="Images\ImgNew\Checked_03.png" />
+    <Content Include="Images\ImgNew\checkmark.png" />
+    <Content Include="Images\ImgNew\check_box.jpg" />
+    <Content Include="Images\ImgNew\chosen-sprite.png" />
+    <Content Include="Images\ImgNew\circle_arrow.png" />
+    <Content Include="Images\ImgNew\circle_arrow_down.png" />
+    <Content Include="Images\ImgNew\clearall.png" />
+    <Content Include="Images\ImgNew\close-icon-010.png" />
+    <Content Include="Images\ImgNew\Close-icon-011-.png" />
+    <Content Include="Images\ImgNew\close.png" />
+    <Content Include="Images\ImgNew\close_icon.png" />
+    <Content Include="Images\ImgNew\company.png" />
+    <Content Include="Images\ImgNew\company_dev.jpg" />
+    <Content Include="Images\ImgNew\confirm.png" />
+    <Content Include="Images\ImgNew\continue.png" />
+    <Content Include="Images\ImgNew\convert.jpg" />
+    <Content Include="Images\ImgNew\create_work_order.jpg" />
+    <Content Include="Images\ImgNew\CreatWorkOrder.png" />
+    <Content Include="Images\ImgNew\CreatWorkOrder_icon.png" />
+    <Content Include="Images\ImgNew\cross-service-icon.png" />
+    <Content Include="Images\ImgNew\Delete-icon-103.png" />
+    <Content Include="Images\ImgNew\Delete.png" />
+    <Content Include="Images\ImgNew\Delete_normal_icon.png" />
+    <Content Include="Images\ImgNew\delivered.jpg" />
+    <Content Include="Images\ImgNew\dollar.png" />
+    <Content Include="Images\ImgNew\dollars.jpg" />
+    <Content Include="Images\ImgNew\download2.png" />
+    <Content Include="Images\ImgNew\downloads.jpg" />
+    <Content Include="Images\ImgNew\downloads.png" />
+    <Content Include="Images\ImgNew\download_Small.png" />
+    <Content Include="Images\ImgNew\Dropdown--Gray.png" />
+    <Content Include="Images\ImgNew\dropdown.jpg" />
+    <Content Include="Images\ImgNew\dropdown.png" />
+    <Content Include="Images\ImgNew\dropdown2.jpg" />
+    <Content Include="Images\ImgNew\ebay-icon.png" />
+    <Content Include="Images\ImgNew\ebay.jpg" />
+    <Content Include="Images\ImgNew\ebay.png" />
+    <Content Include="Images\ImgNew\edit-icon-0001.png" />
+    <Content Include="Images\ImgNew\edit.png" />
+    <Content Include="Images\ImgNew\editIcon.png" />
+    <Content Include="Images\ImgNew\edit_normal_icon.png" />
+    <Content Include="Images\ImgNew\expand.png" />
+    <Content Include="Images\ImgNew\expand_1.png" />
+    <Content Include="Images\ImgNew\ez-logo3.png" />
+    <Content Include="Images\ImgNew\ezyicon.png" />
+    <Content Include="Images\ImgNew\EzyParcels_small.png" />
+    <Content Include="Images\ImgNew\ezy_favicon.ico" />
+    <Content Include="Images\ImgNew\faq.jpg" />
+    <Content Include="Images\ImgNew\faq.png" />
+    <Content Include="Images\ImgNew\faq_Small.png" />
+    <Content Include="Images\ImgNew\fax-Icon.png" />
+    <Content Include="Images\ImgNew\fax.png" />
+    <Content Include="Images\ImgNew\filter.png" />
+    <Content Include="Images\ImgNew\first.png" />
+    <Content Include="Images\ImgNew\Fix-Schedulr-icon.png" />
+    <Content Include="Images\ImgNew\grid_bg.jpg" />
+    <Content Include="Images\ImgNew\HK-Flag.png" />
+    <Content Include="Images\ImgNew\hongkong.jpg" />
+    <Content Include="Images\ImgNew\hongkong.png" />
+    <Content Include="Images\ImgNew\h_sep.jpg" />
+    <Content Include="Images\ImgNew\icons_03.png" />
+    <Content Include="Images\ImgNew\icons_09.png" />
+    <Content Include="Images\ImgNew\IN-Flag.png" />
+    <Content Include="Images\ImgNew\india.jpg" />
+    <Content Include="Images\ImgNew\india.png" />
+    <Content Include="Images\ImgNew\indiacurrency.PNG" />
+    <Content Include="Images\ImgNew\Individual-orders_03.png" />
+    <Content Include="Images\ImgNew\Individual-orders_05.png" />
+    <Content Include="Images\ImgNew\Individual-orders_07.png" />
+    <Content Include="Images\ImgNew\intransit.jpg" />
+    <Content Include="Images\ImgNew\japan.jpg" />
+    <Content Include="Images\ImgNew\japan.png" />
+    <Content Include="Images\ImgNew\JP-Flag.png" />
+    <Content Include="Images\ImgNew\landingPage.png" />
+    <Content Include="Images\ImgNew\last.png" />
+    <Content Include="Images\ImgNew\latest_info.png" />
+    <Content Include="Images\ImgNew\latest_information.jpg" />
+    <Content Include="Images\ImgNew\list-arrow.png" />
+    <Content Include="Images\ImgNew\list.png" />
+    <Content Include="Images\ImgNew\loading.gif" />
+    <Content Include="Images\ImgNew\Login preference.jpg" />
+    <Content Include="Images\ImgNew\Login-icon-104.png" />
+    <Content Include="Images\ImgNew\login.jpg" />
+    <Content Include="Images\ImgNew\login.png" />
+    <Content Include="Images\ImgNew\login2.jpg" />
+    <Content Include="Images\ImgNew\loginContainerBG.jpg" />
+    <Content Include="Images\ImgNew\login_header.png" />
+    <Content Include="Images\ImgNew\logo.jpg" />
+    <Content Include="Images\ImgNew\logo.png" />
+    <Content Include="Images\ImgNew\Logo_03.png" />
+    <Content Include="Images\ImgNew\Logocs.png" />
+    <Content Include="Images\ImgNew\Logoct.png" />
+    <Content Include="Images\ImgNew\Mail-Icon.png" />
+    <Content Include="Images\ImgNew\mail.png" />
+    <Content Include="Images\ImgNew\malaysia.jpg" />
+    <Content Include="Images\ImgNew\malaysia.png" />
+    <Content Include="Images\ImgNew\map.jpg" />
+    <Content Include="Images\ImgNew\Modal-Window_03.png" />
+    <Content Include="Images\ImgNew\Modal-Window_03_2.png" />
+    <Content Include="Images\ImgNew\Modal-Window_05.png" />
+    <Content Include="Images\ImgNew\Modal-Window_08.png" />
+    <Content Include="Images\ImgNew\Modal-Window_10 2.png" />
+    <Content Include="Images\ImgNew\Modal-Window_10.png" />
+    <Content Include="Images\ImgNew\Modal-Window_10_3.png" />
+    <Content Include="Images\ImgNew\Modal-Window_13.png" />
+    <Content Include="Images\ImgNew\Modal-Window_15.png" />
+    <Content Include="Images\ImgNew\Modal-Window_15_2.png" />
+    <Content Include="Images\ImgNew\Modal-Window_17.png" />
+    <Content Include="Images\ImgNew\Modal-Window_27.png" />
+    <Content Include="Images\ImgNew\MY-Flag.png" />
+    <Content Include="Images\ImgNew\New-User-icon.png" />
+    <Content Include="Images\ImgNew\news.png" />
+    <Content Include="Images\ImgNew\news2.jpg" />
+    <Content Include="Images\ImgNew\news2.png" />
+    <Content Include="Images\ImgNew\news_events.jpg" />
+    <Content Include="Images\ImgNew\newzealand.png" />
+    <Content Include="Images\ImgNew\new_user.jpg" />
+    <Content Include="Images\ImgNew\new_user.png" />
+    <Content Include="Images\ImgNew\new_user_active.png" />
+    <Content Include="Images\ImgNew\new_zealand.jpg" />
+    <Content Include="Images\ImgNew\next.jpg" />
+    <Content Include="Images\ImgNew\next.png" />
+    <Content Include="Images\ImgNew\next1.png" />
+    <Content Include="Images\ImgNew\next2.jpg" />
+    <Content Include="Images\ImgNew\next_btn.jpg" />
+    <Content Include="Images\ImgNew\next_btn.png" />
+    <Content Include="Images\ImgNew\next_button.jpg" />
+    <Content Include="Images\ImgNew\next_button.png" />
+    <Content Include="Images\ImgNew\next_service.PNG" />
+    <Content Include="Images\ImgNew\Notification icon.png" />
+    <Content Include="Images\ImgNew\notification.png" />
+    <Content Include="Images\ImgNew\notifications1.png" />
+    <Content Include="Images\ImgNew\Notification_icon.png" />
+    <Content Include="Images\ImgNew\NZ-Flag.png" />
+    <Content Include="Images\ImgNew\offers.jpg" />
+    <Content Include="Images\ImgNew\offices.jpg" />
+    <Content Include="Images\ImgNew\Offices.png" />
+    <Content Include="Images\ImgNew\office_Small.png" />
+    <Content Include="Images\ImgNew\oursetting.png" />
+    <Content Include="Images\ImgNew\Payment_icon.png" />
+    <Content Include="Images\ImgNew\paypal.jpg" />
+    <Content Include="Images\ImgNew\paypal.png" />
+    <Content Include="Images\ImgNew\pdficon.png" />
+    <Content Include="Images\ImgNew\pending.jpg" />
+    <Content Include="Images\ImgNew\PH-Flag.png" />
+    <Content Include="Images\ImgNew\philiphines.jpg" />
+    <Content Include="Images\ImgNew\philippines.png" />
+    <Content Include="Images\ImgNew\Phone-Icon.png" />
+    <Content Include="Images\ImgNew\popup_close.png" />
+    <Content Include="Images\ImgNew\PostageCalculator_Icon copy.png" />
+    <Content Include="Images\ImgNew\PostageCalculator_Icon.png" />
+    <Content Include="Images\ImgNew\prev.jpg" />
+    <Content Include="Images\ImgNew\prev.png" />
+    <Content Include="Images\ImgNew\prev2.jpg" />
+    <Content Include="Images\ImgNew\Print-Icon.png" />
+    <Content Include="Images\ImgNew\print.png" />
+    <Content Include="Images\ImgNew\Profile.jpg" />
+    <Content Include="Images\ImgNew\quantium.jpg" />
+    <Content Include="Images\ImgNew\quantium.png" />
+    <Content Include="Images\ImgNew\Question-Mark.png" />
+    <Content Include="Images\ImgNew\question.png" />
+    <Content Include="Images\ImgNew\radio.jpg" />
+    <Content Include="Images\ImgNew\radio1.jpg" />
+    <Content Include="Images\ImgNew\recommend.jpg" />
+    <Content Include="Images\ImgNew\registered_plus.PNG" />
+    <Content Include="Images\ImgNew\reset.png" />
+    <Content Include="Images\ImgNew\right_arrow2.png" />
+    <Content Include="Images\ImgNew\Save-Icon.png" />
+    <Content Include="Images\ImgNew\save.png" />
+    <Content Include="Images\ImgNew\savecontinue.png" />
+    <Content Include="Images\ImgNew\Search-icon-106.png" />
+    <Content Include="Images\ImgNew\send.png" />
+    <Content Include="Images\ImgNew\sep.jpg" />
+    <Content Include="Images\ImgNew\sep2.png" />
+    <Content Include="Images\ImgNew\sep3.jpg" />
+    <Content Include="Images\ImgNew\sep4.jpg" />
+    <Content Include="Images\ImgNew\sep5.jpg" />
+    <Content Include="Images\ImgNew\separator.png" />
+    <Content Include="Images\ImgNew\separator2.png" />
+    <Content Include="Images\ImgNew\separator3.png" />
+    <Content Include="Images\ImgNew\services.png" />
+    <Content Include="Images\ImgNew\setting.png" />
+    <Content Include="Images\ImgNew\settings.jpg" />
+    <Content Include="Images\ImgNew\settings.png" />
+    <Content Include="Images\ImgNew\SG-Flag.png" />
+    <Content Include="Images\ImgNew\share.jpg" />
+    <Content Include="Images\ImgNew\share.png" />
+    <Content Include="Images\ImgNew\singapore.jpg" />
+    <Content Include="Images\ImgNew\singapore.png" />
+    <Content Include="Images\ImgNew\singapore_post.jpg" />
+    <Content Include="Images\ImgNew\singapore_post.png" />
+    <Content Include="Images\ImgNew\singapore_post_white.jpg" />
+    <Content Include="Images\ImgNew\standard.PNG" />
+    <Content Include="Images\ImgNew\submit.png" />
+    <Content Include="Images\ImgNew\taiwan.jpg" />
+    <Content Include="Images\ImgNew\taiwan.png" />
+    <Content Include="Images\ImgNew\taiwancurrency.PNG" />
+    <Content Include="Images\ImgNew\TH-Flag.png" />
+    <Content Include="Images\ImgNew\thailand.jpg" />
+    <Content Include="Images\ImgNew\thailand.png" />
+    <Content Include="Images\ImgNew\thailandcurrency.PNG" />
+    <Content Include="Images\ImgNew\thumbsUp.png" />
+    <Content Include="Images\ImgNew\tools.jpg" />
+    <Content Include="Images\ImgNew\tools.png" />
+    <Content Include="Images\ImgNew\top_bg.jpg" />
+    <Content Include="Images\ImgNew\track.jpg" />
+    <Content Include="Images\ImgNew\track.png" />
+    <Content Include="Images\ImgNew\track_arrow.jpg" />
+    <Content Include="Images\ImgNew\track_arrow.png" />
+    <Content Include="Images\ImgNew\track_sep.jpg" />
+    <Content Include="Images\ImgNew\track_sep2.jpg" />
+    <Content Include="Images\ImgNew\trends.jpg" />
+    <Content Include="Images\ImgNew\trends.png" />
+    <Content Include="Images\ImgNew\tutorials.jpg" />
+    <Content Include="Images\ImgNew\tutorials.png" />
+    <Content Include="Images\ImgNew\tutorials_Small.png" />
+    <Content Include="Images\ImgNew\TW-Flag.png" />
+    <Content Include="Images\ImgNew\u1182_normal.png" />
+    <Content Include="Images\ImgNew\u1188_normal.png" />
+    <Content Include="Images\ImgNew\u1537_normal.png" />
+    <Content Include="Images\ImgNew\u1625_normal.png" />
+    <Content Include="Images\ImgNew\u174_normal.png" />
+    <Content Include="Images\ImgNew\u180_normal.png" />
+    <Content Include="Images\ImgNew\u190_normal.png" />
+    <Content Include="Images\ImgNew\u2261_normal.png" />
+    <Content Include="Images\ImgNew\u2263_normal.png" />
+    <Content Include="Images\ImgNew\u2339_normal.png" />
+    <Content Include="Images\ImgNew\u2340_normal.png" />
+    <Content Include="Images\ImgNew\u2341_normal.png" />
+    <Content Include="Images\ImgNew\u242_normal.png" />
+    <Content Include="Images\ImgNew\u244_normal.png" />
+    <Content Include="Images\ImgNew\u2605_normal.png" />
+    <Content Include="Images\ImgNew\u3155_normal.png" />
+    <Content Include="Images\ImgNew\u3189_normal.png" />
+    <Content Include="Images\ImgNew\u3191_normal.png" />
+    <Content Include="Images\ImgNew\u3193_normal.png" />
+    <Content Include="Images\ImgNew\u3205_normal.png" />
+    <Content Include="Images\ImgNew\u3209_normal.png" />
+    <Content Include="Images\ImgNew\u34_normal.png" />
+    <Content Include="Images\ImgNew\u62_normal.png" />
+    <Content Include="Images\ImgNew\u96_normal.png" />
+    <Content Include="Images\ImgNew\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Images\ImgNew\ui-icons_222222_256x240.png" />
+    <Content Include="Images\ImgNew\ui-icons_ffffff_256x240.png" />
+    <Content Include="Images\ImgNew\Unchecked_03.png" />
+    <Content Include="Images\ImgNew\upBigArrow.png" />
+    <Content Include="Images\ImgNew\view-icon-002.png" />
+    <Content Include="Images\ImgNew\View.png" />
+    <Content Include="Images\ImgNew\v_sep.jpg" />
+    <Content Include="Images\ImgNew\work_order.jpg" />
+    <Content Include="Images\IN-Flag.png" />
+    <Content Include="Images\india.jpg" />
+    <Content Include="Images\india.png" />
+    <Content Include="Images\indiacurrency.PNG" />
+    <Content Include="Images\Individual-orders_03.png" />
+    <Content Include="Images\Individual-orders_05.png" />
+    <Content Include="Images\Individual-orders_07.png" />
+    <Content Include="Images\intransit.jpg" />
+    <Content Include="Images\japan.jpg" />
+    <Content Include="Images\japan.png" />
+    <Content Include="Images\JP-Flag.png" />
+    <Content Include="Images\landingPage.png" />
+    <Content Include="Images\last.png" />
+    <Content Include="Images\latest_info.png" />
+    <Content Include="Images\latest_information.jpg" />
+    <Content Include="Images\list-arrow.png" />
+    <Content Include="Images\list.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\Login preference.jpg" />
+    <Content Include="Images\Login-icon-104.png" />
+    <Content Include="Images\login.jpg" />
+    <Content Include="Images\login.png" />
+    <Content Include="Images\login2.jpg" />
+    <Content Include="Images\loginContainerBG.jpg" />
+    <Content Include="Images\login_header.png" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\Logo.png" />
+    <Content Include="Images\Logo_03.png" />
+    <Content Include="Images\Mail-Icon.png" />
+    <Content Include="Images\mail.png" />
+    <Content Include="Images\malaysia.jpg" />
+    <Content Include="Images\malaysia.png" />
+    <Content Include="Images\map.jpg" />
+    <Content Include="Images\Modal-Window_03.png" />
+    <Content Include="Images\Modal-Window_03_2.png" />
+    <Content Include="Images\Modal-Window_05.png" />
+    <Content Include="Images\Modal-Window_08.png" />
+    <Content Include="Images\Modal-Window_10 2.png" />
+    <Content Include="Images\Modal-Window_10.png" />
+    <Content Include="Images\Modal-Window_10_3.png" />
+    <Content Include="Images\Modal-Window_13.png" />
+    <Content Include="Images\Modal-Window_15.png" />
+    <Content Include="Images\Modal-Window_15_2.png" />
+    <Content Include="Images\Modal-Window_17.png" />
+    <Content Include="Images\Modal-Window_27.png" />
+    <Content Include="Images\MY-Flag.png" />
+    <Content Include="Images\New-User-icon.png" />
+    <Content Include="Images\New-Zealand.png" />
+    <Content Include="Images\news.png" />
+    <Content Include="Images\news2.jpg" />
+    <Content Include="Images\news_events.jpg" />
+    <Content Include="Images\newzealand.png" />
+    <Content Include="Images\new_user.jpg" />
+    <Content Include="Images\new_user_active.png" />
+    <Content Include="Images\new_zealand.jpg" />
+    <Content Include="Images\next.jpg" />
+    <Content Include="Images\next.png" />
+    <Content Include="Images\next1.png" />
+    <Content Include="Images\next2.jpg" />
+    <Content Include="Images\next_btn.jpg" />
+    <Content Include="Images\next_btn.png" />
+    <Content Include="Images\next_button.jpg" />
+    <Content Include="Images\next_button.png" />
+    <Content Include="Images\next_service.PNG" />
+    <Content Include="Images\Notification icon.png" />
+    <Content Include="Images\notification.png" />
+    <Content Include="Images\notifications1.png" />
+    <Content Include="Images\Notification_icon.png" />
+    <Content Include="Images\NZ-Flag.png" />
+    <Content Include="Images\offers.jpg" />
+    <Content Include="Images\offices.jpg" />
+    <Content Include="Images\offices.png" />
+    <Content Include="Images\Payment_icon.png" />
+    <Content Include="Images\paypal.jpg" />
+    <Content Include="Images\pdf1.png" />
+    <Content Include="Images\pdf2.png" />
+    <Content Include="Images\pdf3.png" />
+    <Content Include="Images\pdficon.png" />
+    <Content Include="Images\pending.jpg" />
+    <Content Include="Images\PH-Flag.png" />
+    <Content Include="Images\philiphines.jpg" />
+    <Content Include="Images\philippines.png" />
+    <Content Include="Images\Phone-Icon.png" />
+    <Content Include="Images\popup_close.png" />
+    <Content Include="Images\PostageCalculator_Icon copy.png" />
+    <Content Include="Images\PostageCalculator_Icon.png" />
+    <Content Include="Images\prev.jpg" />
+    <Content Include="Images\prev.png" />
+    <Content Include="Images\prev2.jpg" />
+    <Content Include="Images\Print-Icon.png" />
+    <Content Include="Images\print.png" />
+    <Content Include="Images\Profile.jpg" />
+    <Content Include="Images\quantium.png" />
+    <Content Include="Images\Question-Mark.png" />
+    <Content Include="Images\radio.jpg" />
+    <Content Include="Images\radio1.jpg" />
+    <Content Include="Images\recommend.jpg" />
+    <Content Include="Images\registered_plus.PNG" />
+    <Content Include="Images\reset.png" />
+    <Content Include="Images\right_arrow2.png" />
+    <Content Include="Images\Save-Icon.png" />
+    <Content Include="Images\save.png" />
+    <Content Include="Images\savecontinue.png" />
+    <Content Include="Images\Search-icon-106.png" />
+    <Content Include="Images\send.png" />
+    <Content Include="Images\sep.jpg" />
+    <Content Include="Images\sep2.png" />
+    <Content Include="Images\sep3.jpg" />
+    <Content Include="Images\sep4.jpg" />
+    <Content Include="Images\sep5.jpg" />
+    <Content Include="Images\separator.png" />
+    <Content Include="Images\separator2.png" />
+    <Content Include="Images\separator3.png" />
+    <Content Include="Images\services.png" />
+    <Content Include="Images\setting.png" />
+    <Content Include="Images\settings.jpg" />
+    <Content Include="Images\settings.png" />
+    <Content Include="Images\SG-Flag.png" />
+    <Content Include="Images\share.jpg" />
+    <Content Include="Images\share.png" />
+    <Content Include="Images\singapore.jpg" />
+    <Content Include="Images\singapore.png" />
+    <Content Include="Images\singapore_post.jpg" />
+    <Content Include="Images\singapore_post_white.jpg" />
+    <Content Include="Images\standard.PNG" />
+    <Content Include="Images\submit.png" />
+    <Content Include="Images\taiwan.jpg" />
+    <Content Include="Images\taiwan.png" />
+    <Content Include="Images\taiwancurrency.PNG" />
+    <Content Include="Images\TH-Flag.png" />
+    <Content Include="Images\thailand.jpg" />
+    <Content Include="Images\thailand.png" />
+    <Content Include="Images\thailandcurrency.PNG" />
+    <Content Include="Images\thumbsUp.png" />
+    <Content Include="Images\tools.jpg" />
+    <Content Include="Images\tools.png" />
+    <Content Include="Images\top_bg.jpg" />
+    <Content Include="Images\track.jpg" />
+    <Content Include="Images\track.png" />
+    <Content Include="Images\track_arrow.jpg" />
+    <Content Include="Images\track_sep.jpg" />
+    <Content Include="Images\track_sep2.jpg" />
+    <Content Include="Images\trends.jpg" />
+    <Content Include="Images\trends.png" />
+    <Content Include="Images\tutorials.jpg" />
+    <Content Include="Images\tutorials.png" />
+    <Content Include="Images\tutorial\Account Login1\1.png" />
+    <Content Include="Images\tutorial\Account Login1\10.png" />
+    <Content Include="Images\tutorial\Account Login1\11.png" />
+    <Content Include="Images\tutorial\Account Login1\12.png" />
+    <Content Include="Images\tutorial\Account Login1\2.png" />
+    <Content Include="Images\tutorial\Account Login1\3.png" />
+    <Content Include="Images\tutorial\Account Login1\4.png" />
+    <Content Include="Images\tutorial\Account Login1\5.png" />
+    <Content Include="Images\tutorial\Account Login1\6.png" />
+    <Content Include="Images\tutorial\Account Login1\7.png" />
+    <Content Include="Images\tutorial\Account Login1\8.png" />
+    <Content Include="Images\tutorial\Account Login1\9.png" />
+    <Content Include="Images\tutorial\Account Login\1.png" />
+    <Content Include="Images\tutorial\Account Login\2.png" />
+    <Content Include="Images\tutorial\Account Login\3.png" />
+    <Content Include="Images\tutorial\Calculate Postage Value\1.png" />
+    <Content Include="Images\tutorial\Calculate Postage Value\2.png" />
+    <Content Include="Images\tutorial\Calculate Postage Value\3.png" />
+    <Content Include="Images\tutorial\Calculate Postage Value\4.png" />
+    <Content Include="Images\tutorial\Calculate Postage Value\5.png" />
+    <Content Include="Images\tutorial\Calculate Postage Value\6.png" />
+    <Content Include="Images\tutorial\Create Bulk Order\1.png" />
+    <Content Include="Images\tutorial\Create Bulk Order\10.png" />
+    <Content Include="Images\tutorial\Create Bulk Order\11.png" />
+    <Content Include="Images\tutorial\Create Bulk Order\2.png" />
+    <Content Include="Images\tutorial\Create Bulk Order\3.png" />
+    <Content Include="Images\tutorial\Create Bulk Order\4.png" />
+    <Content Include="Images\tutorial\Create Bulk Order\5.png" />
+    <Content Include="Images\tutorial\Create Bulk Order\6.png" />
+    <Content Include="Images\tutorial\Create Bulk Order\7.png" />
+    <Content Include="Images\tutorial\Create Bulk Order\8.png" />
+    <Content Include="Images\tutorial\Create Bulk Order\9.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Registered User\1.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Registered User\10.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Registered User\11.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Registered User\2.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Registered User\3.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Registered User\4.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Registered User\5.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Registered User\6.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Registered User\7.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Registered User\8.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Registered User\9.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Walk-in Customer\1.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Walk-in Customer\10.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Walk-in Customer\11.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Walk-in Customer\12.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Walk-in Customer\2.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Walk-in Customer\3.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Walk-in Customer\4.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Walk-in Customer\5.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Walk-in Customer\6.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Walk-in Customer\7.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Walk-in Customer\8.png" />
+    <Content Include="Images\tutorial\Create Individual Order - Walk-in Customer\9.png" />
+    <Content Include="Images\tutorial\Create Sub Account\1.png" />
+    <Content Include="Images\tutorial\Create Sub Account\2.png" />
+    <Content Include="Images\tutorial\Create Sub Account\3.png" />
+    <Content Include="Images\tutorial\Create Sub Account\4.png" />
+    <Content Include="Images\tutorial\Create Sub Account\5.png" />
+    <Content Include="Images\tutorial\Create Sub Account\6.png" />
+    <Content Include="Images\tutorial\Create Sub Account\7.png" />
+    <Content Include="Images\tutorial\flow chart-02.jpg" />
+    <Content Include="Images\tutorial\Import Orders from ebay\1.png" />
+    <Content Include="Images\tutorial\Import Orders from ebay\10.png" />
+    <Content Include="Images\tutorial\Import Orders from ebay\11.png" />
+    <Content Include="Images\tutorial\Import Orders from ebay\2.png" />
+    <Content Include="Images\tutorial\Import Orders from ebay\3.png" />
+    <Content Include="Images\tutorial\Import Orders from ebay\4.png" />
+    <Content Include="Images\tutorial\Import Orders from ebay\5.png" />
+    <Content Include="Images\tutorial\Import Orders from ebay\6.png" />
+    <Content Include="Images\tutorial\Import Orders from ebay\7.png" />
+    <Content Include="Images\tutorial\Import Orders from ebay\8.png" />
+    <Content Include="Images\tutorial\Import Orders from ebay\9.png" />
+    <Content Include="Images\tutorial\logo.png" />
+    <Content Include="Images\tutorial\next.png" />
+    <Content Include="Images\tutorial\pagination.png" />
+    <Content Include="Images\tutorial\previous.png" />
+    <Content Include="Images\tutorial\quantium.png" />
+    <Content Include="Images\tutorial\Register New User\1.png" />
+    <Content Include="Images\tutorial\Register New User\2.png" />
+    <Content Include="Images\tutorial\Register New User\3.png" />
+    <Content Include="Images\tutorial\Register New User\4.png" />
+    <Content Include="Images\tutorial\singapore_post.png" />
+    <Content Include="Images\tutorial\Track Order\Registered User\1.png" />
+    <Content Include="Images\tutorial\Track Order\Registered User\2.png" />
+    <Content Include="Images\tutorial\Track Order\Registered User\3.png" />
+    <Content Include="Images\tutorial\Track Order\Walk-in Customer\1.png" />
+    <Content Include="Images\tutorial\Track Order\Walk-in Customer\2.png" />
+    <Content Include="Images\tutorial\Track Order\Walk-in Customer\3.png" />
+    <Content Include="Images\tutorial\Track Order\Walk-in Customer\4.png" />
+    <Content Include="Images\tutorial\View Order History\1.png" />
+    <Content Include="Images\tutorial\View Order History\2.png" />
+    <Content Include="Images\tutorial\View Order History\3.png" />
+    <Content Include="Images\tutorial\View Reports\View Commercial Invoice\1.png" />
+    <Content Include="Images\tutorial\View Reports\View Commercial Invoice\2.png" />
+    <Content Include="Images\tutorial\View Reports\View Commercial Invoice\3.png" />
+    <Content Include="Images\tutorial\View Reports\View Invoice Credit Note\1.png" />
+    <Content Include="Images\tutorial\View Reports\View Invoice Credit Note\2.png" />
+    <Content Include="Images\tutorial\View Reports\View Invoice Credit Note\3.png" />
+    <Content Include="Images\tutorial\View Reports\View Shipping label\1.png" />
+    <Content Include="Images\tutorial\View Reports\View Shipping label\2.png" />
+    <Content Include="Images\tutorial\View Reports\View Tax Invoice\1.png" />
+    <Content Include="Images\tutorial\View Reports\View Tax Invoice\2.png" />
+    <Content Include="Images\tutorial\View Reports\View Tax Invoice\3.png" />
+    <Content Include="Images\tutorial\View Reports\View Transaction Report\1.png" />
+    <Content Include="Images\tutorial\View Reports\View Transaction Report\2.png" />
+    <Content Include="Images\tutorial\View Reports\View Transaction Report\3.png" />
+    <Content Include="Images\TW-Flag.png" />
+    <Content Include="Images\u1182_normal.png" />
+    <Content Include="Images\u1188_normal.png" />
+    <Content Include="Images\u1537_normal.png" />
+    <Content Include="Images\u1625_normal.png" />
+    <Content Include="Images\u174_normal.png" />
+    <Content Include="Images\u180_normal.png" />
+    <Content Include="Images\u190_normal.png" />
+    <Content Include="Images\u2261_normal.png" />
+    <Content Include="Images\u2263_normal.png" />
+    <Content Include="Images\u2339_normal.png" />
+    <Content Include="Images\u2340_normal.png" />
+    <Content Include="Images\u2341_normal.png" />
+    <Content Include="Images\u242_normal.png" />
+    <Content Include="Images\u244_normal.png" />
+    <Content Include="Images\u2605_normal.png" />
+    <Content Include="Images\u3155_normal.png" />
+    <Content Include="Images\u3189_normal.png" />
+    <Content Include="Images\u3191_normal.png" />
+    <Content Include="Images\u3193_normal.png" />
+    <Content Include="Images\u3205_normal.png" />
+    <Content Include="Images\u3209_normal.png" />
+    <Content Include="Images\u34_normal.png" />
+    <Content Include="Images\u62_normal.png" />
+    <Content Include="Images\u96_normal.png" />
+    <Content Include="Images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Images\ui-icons_222222_256x240.png" />
+    <Content Include="Images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Images\Unchecked_03.png" />
+    <Content Include="Images\upBigArrow.png" />
+    <Content Include="Images\view-icon-002.png" />
+    <Content Include="Images\View.png" />
+    <Content Include="Images\v_sep.jpg" />
+    <Content Include="Images\work_order.jpg" />
+    <Content Include="Scripts\AdminScripts\Admin\AdminMain.js" />
+    <Content Include="Scripts\AdminScripts\Admin\AdminProfile.js" />
+    <Content Include="Scripts\AdminScripts\Admin\AdminProfileValidation.js" />
+    <Content Include="Scripts\AdminScripts\Admin\jquery.validate.js" />
+    <Content Include="Scripts\AdminScripts\Admin\OfficeLocation.js" />
+    <Content Include="Scripts\AdminScripts\Bulkupload\BulkUpload.js" />
+    <Content Include="Scripts\AdminScripts\ContentManagement\cms_config.js" />
+    <Content Include="Scripts\AdminScripts\ContentManagement\configureDownloads.js" />
+    <Content Include="Scripts\AdminScripts\ContentManagement\configureFaqs.js" />
+    <Content Include="Scripts\AdminScripts\ContentManagement\configureFaqsValidations.js" />
+    <Content Include="Scripts\AdminScripts\ContentManagement\ContentManagement.js" />
+    <Content Include="Scripts\AdminScripts\Admin\customValidationsAdmin.js" />
+    <Content Include="Scripts\AdminScripts\Orders\articleWeightConfigurationAdmin.js" />
+    <Content Include="Scripts\AdminScripts\vendor\jquery-te-1.4.0.min.js" />
+    <Content Include="Scripts\AdminScripts\vendor\jquery.dataTables.js" />
+    <Content Include="Scripts\AdminScripts\vendor\jquery.dataTables.min.js" />
+    <Content Include="Scripts\AdminScripts\RangeAllocations\ManualTrackingAllocation.js" />
+    <Content Include="Scripts\AdminScripts\Orders\Order.js" />
+    <Content Include="Scripts\AdminScripts\Orders\OrderEntry.js" />
+    <Content Include="Scripts\AdminScripts\vendor\Placeholder.js" />
+    <Content Include="Scripts\AdminScripts\vendor\plugins.js" />
+    <Content Include="Scripts\AdminScripts\postlogin.js" />
+    <Content Include="Scripts\AdminScripts\Orders\reports.js" />
+    <Content Include="Scripts\AdminScripts\RuleEntry.js" />
+    <Content Include="Scripts\AdminScripts\RangeAllocations\TrackingRangeAllocation.js" />
+    <Content Include="Scripts\AdminScripts\RangeAllocations\VarianceHandling.js" />
+    <Content Include="Scripts\AdminScripts\vendor\chosen.jquery.min.js" />
+    <Content Include="Scripts\AdminScripts\vendor\corner.js" />
+    <Content Include="Scripts\AdminScripts\vendor\jquery-1.9.0.min.js" />
+    <Content Include="Scripts\AdminScripts\vendor\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Scripts\AdminScripts\vendor\jquery.flip.js" />
+    <Content Include="Scripts\AdminScripts\vendor\jquery.slimscroll.js" />
+    <Content Include="Scripts\AdminScripts\vendor\jquery.timepicker.min.js" />
+    <Content Include="Scripts\AdminScripts\vendor\modernizr-2.6.2.min.js" />
+    <Content Include="Scripts\AdminScripts\vendor\tinycarousal.js" />
+    <Content Include="Scripts\articleWeightConfiguration.js" />
+    <Content Include="Scripts\AdminScripts\CreateNewRule.js" />
+    <Content Include="Scripts\jquery.slides.min.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\SpecialPaymentOption.js" />
+    <Content Include="Scripts\StateCityPostalcodePickupAddress.js" />
+    <Content Include="Scripts\Tutorials.js" />
+    <Content Include="Scripts\ValidateCitystateforpostallogin.js" />
+    <Content Include="Scripts\Validations\PostLogin\bulkuploadFunctions.js" />
+    <Content Include="Scripts\CommonValidations\additional-methods.js" />
+    <Content Include="Scripts\CommonValidations\customValidations.js" />
+    <Content Include="Scripts\CommonValidations\jquery.form.js" />
+    <Content Include="Scripts\CommonValidations\jquery.validate.js" />
+    <Content Include="Scripts\Language\jquery-lang.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\LanguageChangePlugin.js" />
+    <Content Include="Scripts\Language\cs.js" />
+    <Content Include="Scripts\Language\ct.js" />
+    <Content Include="Scripts\Placeholder.js" />
+    <Content Include="Scripts\plugins.js" />
+    <Content Include="Scripts\postlogin.js" />
+    <Content Include="Scripts\TrackAndTrace.js" />
+    <Content Include="Scripts\Validation.js" />
+    <Content Include="Scripts\Validations\AdminValidation\AdminValidation.js" />
+    <Content Include="Scripts\AdminScripts\Admin\CommonValidation.js" />
+    <Content Include="Scripts\Validations\ChangePasswordValidation.js" />
+    <Content Include="Scripts\Validations\Index\IndexValidation.js" />
+    <Content Include="Scripts\Validations\PostLogin\PostLoginValidation.js" />
+    <Content Include="Scripts\Validations\ProfileValidation.js" />
+    <Content Include="Scripts\Validations\SubAccountCreationValidation.js" />
+    <Content Include="Scripts\ValidStateCityPostalCode.js" />
+    <Content Include="Scripts\vendor\chosen.jquery.min.js" />
+    <Content Include="Scripts\vendor\corner.js" />
+    <Content Include="Scripts\vendor\jquery-1.9.0.min.js" />
+    <Content Include="Scripts\vendor\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Scripts\vendor\jquery.flip.js" />
+    <Content Include="Scripts\vendor\jquery.slimscroll.js" />
+    <Content Include="Scripts\vendor\jquery.timepicker.min.js" />
+    <Content Include="Scripts\vendor\modernizr-2.6.2.min.js" />
+    <Content Include="Scripts\vendor\tinycarousal.js" />
+    <Content Include="StaticRepository\AboutUS_CS.html" />
+    <Content Include="StaticRepository\AboutUS_CS_files\image001.png" />
+    <Content Include="StaticRepository\AboutUS_CS_files\image002.gif" />
+    <Content Include="StaticRepository\AboutUS_CS_files\image003.gif" />
+    <Content Include="StaticRepository\AboutUS_CT.html" />
+    <Content Include="StaticRepository\AboutUS_CT_files\image001.png" />
+    <Content Include="StaticRepository\AboutUS_CT_files\image002.gif" />
+    <Content Include="StaticRepository\AboutUS_CT_files\image003.gif" />
+    <Content Include="StaticRepository\AboutUS_EN.html" />
+    <Content Include="StaticRepository\AboutUs_EN_files\image001.png" />
+    <Content Include="StaticRepository\AboutUs_EN_files\image002.gif" />
+    <Content Include="StaticRepository\AboutUs_EN_files\image003.gif" />
+    <Content Include="StaticRepository\AboutUs_EN_files\image004.gif" />
+    <Content Include="StaticRepository\CompanyDevelopment_CS.html" />
+    <Content Include="StaticRepository\CompanyDevelopment_CS_files\image001.gif" />
+    <Content Include="StaticRepository\CompanyDevelopment_CT.html" />
+    <Content Include="StaticRepository\CompanyDevelopment_CT_files\image001.gif" />
+    <Content Include="StaticRepository\CompanyDevelopment_EN.html" />
+    <Content Include="StaticRepository\CompanyDevelopment_EN_files\image001.gif" />
+    <Content Include="StaticRepository\EzyparcelPremium_CS.html" />
+    <Content Include="StaticRepository\EzyparcelPremium_CS_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelPremium_CS_files\image002.gif" />
+    <Content Include="StaticRepository\EzyparcelPremium_CT.html" />
+    <Content Include="StaticRepository\EzyparcelPremium_CT_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelPremium_CT_files\image002.gif" />
+    <Content Include="StaticRepository\EzyparcelPremium_EN.html" />
+    <Content Include="StaticRepository\EzyparcelPremium_EN_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelPremium_EN_files\image002.gif" />
+    <Content Include="StaticRepository\EzyparcelPriority_CS.html" />
+    <Content Include="StaticRepository\EzyparcelPriority_CS_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelPriority_CS_files\image002.gif" />
+    <Content Include="StaticRepository\EzyparcelPriority_CT.html" />
+    <Content Include="StaticRepository\EzyparcelPriority_CT_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelPriority_CT_files\image002.gif" />
+    <Content Include="StaticRepository\EzyparcelPriority_EN.html" />
+    <Content Include="StaticRepository\EzyparcelPriority_EN_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelPriority_EN_files\image002.gif" />
+    <Content Include="StaticRepository\EzyparcelRegisteredPlus_CS.html" />
+    <Content Include="StaticRepository\EzyparcelRegisteredPlus_CS_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelRegisteredPlus_CS_files\image002.gif" />
+    <Content Include="StaticRepository\EzyparcelRegisteredPlus_CT.html" />
+    <Content Include="StaticRepository\EzyparcelRegisteredPlus_CT_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelRegisteredPlus_CT_files\image002.gif" />
+    <Content Include="StaticRepository\EzyparcelRegisteredPlus_EN.html" />
+    <Content Include="StaticRepository\EzyparcelRegisteredPlus_EN_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelRegisteredPlus_EN_files\image002.gif" />
+    <Content Include="StaticRepository\EzyparcelRegistered_CS.html" />
+    <Content Include="StaticRepository\EzyparcelRegistered_CS_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelRegistered_CS_files\image002.gif" />
+    <Content Include="StaticRepository\EzyparcelRegistered_CT.html" />
+    <Content Include="StaticRepository\EzyparcelRegistered_CT_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelRegistered_CT_files\image002.gif" />
+    <Content Include="StaticRepository\EzyparcelRegistered_EN.html" />
+    <Content Include="StaticRepository\EzyparcelRegistered_EN_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelRegistered_EN_files\image002.gif" />
+    <Content Include="StaticRepository\EzyparcelStandard_CS.html" />
+    <Content Include="StaticRepository\EzyparcelStandard_CS_files\Features_EN.html" />
+    <Content Include="StaticRepository\EzyparcelStandard_CS_files\Features_EN_files\image001.gif" />
+    <Content Include="StaticRepository\EzyparcelStandard_CS_files\Features_EN_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelStandard_CS_files\Features_EN_files\image002.gif" />
+    <Content Include="StaticRepository\EzyparcelStandard_CS_files\Features_EN_files\image003.gif" />
+    <Content Include="StaticRepository\EzyparcelStandard_CS_files\Features_EN_files\image004.gif" />
+    <Content Include="StaticRepository\EzyparcelStandard_CS_files\Features_EN_files\image005.gif" />
+    <Content Include="StaticRepository\EzyparcelStandard_CS_files\Features_EN_files\image006.gif" />
+    <Content Include="StaticRepository\EzyparcelStandard_CS_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelStandard_CS_files\image002.gif" />
+    <Content Include="StaticRepository\EzyparcelStandard_CT.html" />
+    <Content Include="StaticRepository\EzyparcelStandard_CT_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelStandard_CT_files\image002.gif" />
+    <Content Include="StaticRepository\EzyparcelStandard_EN.html" />
+    <Content Include="StaticRepository\EzyparcelStandard_EN_files\image001.png" />
+    <Content Include="StaticRepository\EzyparcelStandard_EN_files\image002.gif" />
+    <Content Include="StaticRepository\Features_CS.html" />
+    <Content Include="StaticRepository\Features_CS_files\image001.png" />
+    <Content Include="StaticRepository\Features_CS_files\image002.gif" />
+    <Content Include="StaticRepository\Features_CS_files\image003.gif" />
+    <Content Include="StaticRepository\Features_CS_files\image004.gif" />
+    <Content Include="StaticRepository\Features_CT.html" />
+    <Content Include="StaticRepository\Features_CT_files\image001.gif" />
+    <Content Include="StaticRepository\Features_CT_files\image001.png" />
+    <Content Include="StaticRepository\Features_CT_files\image002.gif" />
+    <Content Include="StaticRepository\Features_CT_files\image003.gif" />
+    <Content Include="StaticRepository\Features_CT_files\image004.gif" />
+    <Content Include="StaticRepository\Features_CT_files\image005.gif" />
+    <Content Include="StaticRepository\Features_CT_files\image006.gif" />
+    <Content Include="StaticRepository\Features_CT_files\image007.gif" />
+    <Content Include="StaticRepository\Features_CT_files\image008.gif" />
+    <Content Include="StaticRepository\Features_EN.html" />
+    <Content Include="StaticRepository\Features_EN_files\image001.gif" />
+    <Content Include="StaticRepository\Features_EN_files\image001.png" />
+    <Content Include="StaticRepository\Features_EN_files\image002.gif" />
+    <Content Include="StaticRepository\Features_EN_files\image003.gif" />
+    <Content Include="StaticRepository\Features_EN_files\image003.jpg" />
+    <Content Include="StaticRepository\Features_EN_files\image004.gif" />
+    <Content Include="StaticRepository\Features_EN_files\image004.jpg" />
+    <Content Include="StaticRepository\Features_EN_files\image005.gif" />
+    <Content Include="StaticRepository\Features_EN_files\image006.gif" />
+    <Content Include="StaticRepository\Feature_EN.html" />
+    <Content Include="StaticRepository\Feature_EN_files\image001.png" />
+    <Content Include="StaticRepository\Feature_EN_files\image003.jpg" />
+    <Content Include="StaticRepository\Feature_EN_files\image004.jpg" />
+    <Content Include="StaticRepository\LatestInformationApr_EN.html" />
+    <Content Include="StaticRepository\LatestInformationApr_EN_files\image001.gif" />
+    <Content Include="StaticRepository\LatestInformationApr_EN_files\image002.gif" />
+    <Content Include="StaticRepository\LatestInformationAug_EN.html" />
+    <Content Include="StaticRepository\LatestInformationAug_EN_files\image001.png" />
+    <Content Include="StaticRepository\LatestInformationAug_EN_files\image002.gif" />
+    <Content Include="StaticRepository\LatestInformationAug_EN_files\image003.gif" />
+    <Content Include="StaticRepository\LatestInformationAug_EN_files\image004.gif" />
+    <Content Include="StaticRepository\LatestInformationDec_EN.html" />
+    <Content Include="StaticRepository\LatestInformationDec_EN_files\image001.gif" />
+    <Content Include="StaticRepository\LatestInformationDec_EN_files\image002.gif" />
+    <Content Include="StaticRepository\LatestInformationFeb_EN.html" />
+    <Content Include="StaticRepository\LatestInformationFeb_EN_files\image001.gif" />
+    <Content Include="StaticRepository\LatestInformationFeb_EN_files\image002.gif" />
+    <Content Include="StaticRepository\LatestInformationJan_EN.html" />
+    <Content Include="StaticRepository\LatestInformationJan_EN_files\image001.gif" />
+    <Content Include="StaticRepository\LatestInformationJan_EN_files\image002.gif" />
+    <Content Include="StaticRepository\LatestInformationJul_EN.html" />
+    <Content Include="StaticRepository\LatestInformationJul_EN_files\image001.gif" />
+    <Content Include="StaticRepository\LatestInformationJul_EN_files\image002.gif" />
+    <Content Include="StaticRepository\LatestInformationJun_EN.html" />
+    <Content Include="StaticRepository\LatestInformationJun_EN_files\image001.gif" />
+    <Content Include="StaticRepository\LatestInformationJun_EN_files\image002.gif" />
+    <Content Include="StaticRepository\LatestInformationMar_EN.html" />
+    <Content Include="StaticRepository\LatestInformationMar_EN_files\image001.gif" />
+    <Content Include="StaticRepository\LatestInformationMar_EN_files\image002.gif" />
+    <Content Include="StaticRepository\LatestInformationMay_EN.html" />
+    <Content Include="StaticRepository\LatestInformationMay_EN_files\image001.gif" />
+    <Content Include="StaticRepository\LatestInformationMay_EN_files\image002.gif" />
+    <Content Include="StaticRepository\LatestInformationNov_EN.html" />
+    <Content Include="StaticRepository\LatestInformationNov_EN_files\image001.gif" />
+    <Content Include="StaticRepository\LatestInformationNov_EN_files\image002.gif" />
+    <Content Include="StaticRepository\LatestInformationOct_EN.html" />
+    <Content Include="StaticRepository\LatestInformationOct_EN_files\image001.gif" />
+    <Content Include="StaticRepository\LatestInformationOct_EN_files\image002.gif" />
+    <Content Include="StaticRepository\LatestInformationSep_EN.html" />
+    <Content Include="StaticRepository\LatestInformationSep_EN_files\image001.gif" />
+    <Content Include="StaticRepository\LatestInformationSep_EN_files\image002.gif" />
+    <Content Include="Tutorial\cs\images\Account Login\1.png" />
+    <Content Include="Tutorial\cs\images\Account Login\2.png" />
+    <Content Include="Tutorial\cs\images\Account Login\3.png" />
+    <Content Include="Tutorial\cs\images\Calculate Postage Value\1.png" />
+    <Content Include="Tutorial\cs\images\Calculate Postage Value\2.png" />
+    <Content Include="Tutorial\cs\images\Calculate Postage Value\3.png" />
+    <Content Include="Tutorial\cs\images\Calculate Postage Value\4.png" />
+    <Content Include="Tutorial\cs\images\Calculate Postage Value\5.png" />
+    <Content Include="Tutorial\cs\images\Calculate Postage Value\6.png" />
+    <Content Include="Tutorial\cs\images\Create Bulk Order\1.png" />
+    <Content Include="Tutorial\cs\images\Create Bulk Order\10.png" />
+    <Content Include="Tutorial\cs\images\Create Bulk Order\11.png" />
+    <Content Include="Tutorial\cs\images\Create Bulk Order\2.png" />
+    <Content Include="Tutorial\cs\images\Create Bulk Order\3.png" />
+    <Content Include="Tutorial\cs\images\Create Bulk Order\4.png" />
+    <Content Include="Tutorial\cs\images\Create Bulk Order\5.png" />
+    <Content Include="Tutorial\cs\images\Create Bulk Order\6.png" />
+    <Content Include="Tutorial\cs\images\Create Bulk Order\7.png" />
+    <Content Include="Tutorial\cs\images\Create Bulk Order\8.png" />
+    <Content Include="Tutorial\cs\images\Create Bulk Order\9.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Registered User\1.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Registered User\10.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Registered User\11.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Registered User\2.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Registered User\3.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Registered User\4.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Registered User\5.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Registered User\6.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Registered User\7.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Registered User\8.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Registered User\9.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Walk-in Customer\1.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Walk-in Customer\10.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Walk-in Customer\11.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Walk-in Customer\12.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Walk-in Customer\2.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Walk-in Customer\3.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Walk-in Customer\4.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Walk-in Customer\5.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Walk-in Customer\6.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Walk-in Customer\7.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Walk-in Customer\8.png" />
+    <Content Include="Tutorial\cs\images\Create Individual Order - Walk-in Customer\9.png" />
+    <Content Include="Tutorial\cs\images\Create Sub Account\1.png" />
+    <Content Include="Tutorial\cs\images\Create Sub Account\2.png" />
+    <Content Include="Tutorial\cs\images\Create Sub Account\3.png" />
+    <Content Include="Tutorial\cs\images\Create Sub Account\4.png" />
+    <Content Include="Tutorial\cs\images\Create Sub Account\5.png" />
+    <Content Include="Tutorial\cs\images\Create Sub Account\7.png" />
+    <Content Include="Tutorial\cs\images\flow chart-01.jpg" />
+    <Content Include="Tutorial\cs\images\flow chart-02.jpg" />
+    <Content Include="Tutorial\cs\images\flow-chart-04.jpg" />
+    <Content Include="Tutorial\cs\images\flow-chart-04_cs.jpg" />
+    <Content Include="Tutorial\cs\images\flow-chart-04_ct.jpg" />
+    <Content Include="Tutorial\cs\images\flow_chart-03.jpg" />
+    <Content Include="Tutorial\cs\images\Hand-icon.png" />
+    <Content Include="Tutorial\cs\images\Import Orders from ebay\1.png" />
+    <Content Include="Tutorial\cs\images\Import Orders from ebay\10.png" />
+    <Content Include="Tutorial\cs\images\Import Orders from ebay\11.png" />
+    <Content Include="Tutorial\cs\images\Import Orders from ebay\2.png" />
+    <Content Include="Tutorial\cs\images\Import Orders from ebay\3.png" />
+    <Content Include="Tutorial\cs\images\Import Orders from ebay\4.png" />
+    <Content Include="Tutorial\cs\images\Import Orders from ebay\5.png" />
+    <Content Include="Tutorial\cs\images\Import Orders from ebay\6.png" />
+    <Content Include="Tutorial\cs\images\Import Orders from ebay\7.png" />
+    <Content Include="Tutorial\cs\images\Import Orders from ebay\8.png" />
+    <Content Include="Tutorial\cs\images\logo.png" />
+    <Content Include="Tutorial\cs\images\Logo_cs.png" />
+    <Content Include="Tutorial\cs\images\Logo_ct.png" />
+    <Content Include="Tutorial\cs\images\Mail Preparation Steps\2.jpg" />
+    <Content Include="Tutorial\cs\images\next.png" />
+    <Content Include="Tutorial\cs\images\pagination.png" />
+    <Content Include="Tutorial\cs\images\previous.png" />
+    <Content Include="Tutorial\cs\images\quantium.png" />
+    <Content Include="Tutorial\cs\images\Register New User\1.png" />
+    <Content Include="Tutorial\cs\images\Register New User\3.png" />
+    <Content Include="Tutorial\cs\images\Register New User\4.png" />
+    <Content Include="Tutorial\cs\images\singapore_post.png" />
+    <Content Include="Tutorial\cs\images\Track Order\Registered User\1.png" />
+    <Content Include="Tutorial\cs\images\Track Order\Registered User\2.png" />
+    <Content Include="Tutorial\cs\images\Track Order\Registered User\3.png" />
+    <Content Include="Tutorial\cs\images\Track Order\Walk-in Customer\1.png" />
+    <Content Include="Tutorial\cs\images\Track Order\Walk-in Customer\2.png" />
+    <Content Include="Tutorial\cs\images\Track Order\Walk-in Customer\3.png" />
+    <Content Include="Tutorial\cs\images\View Order History\1.png" />
+    <Content Include="Tutorial\cs\images\View Order History\2.png" />
+    <Content Include="Tutorial\cs\images\View Order History\3.png" />
+    <Content Include="Tutorial\cs\images\View Reports\View Commercial Invoice\1.png" />
+    <Content Include="Tutorial\cs\images\View Reports\View Commercial Invoice\2.png" />
+    <Content Include="Tutorial\cs\images\View Reports\View Commercial Invoice\3.png" />
+    <Content Include="Tutorial\cs\images\View Reports\View Invoice Credit Note\1.png" />
+    <Content Include="Tutorial\cs\images\View Reports\View Invoice Credit Note\2.png" />
+    <Content Include="Tutorial\cs\images\View Reports\View Invoice Credit Note\3.png" />
+    <Content Include="Tutorial\cs\images\View Reports\View Shipping label\1.png" />
+    <Content Include="Tutorial\cs\images\View Reports\View Shipping label\2.png" />
+    <Content Include="Tutorial\cs\images\View Reports\View Tax Invoice\1.png" />
+    <Content Include="Tutorial\cs\images\View Reports\View Tax Invoice\2.png" />
+    <Content Include="Tutorial\cs\images\View Reports\View Tax Invoice\3.png" />
+    <Content Include="Tutorial\cs\images\View Reports\View Transaction Report\1.png" />
+    <Content Include="Tutorial\cs\images\View Reports\View Transaction Report\2.png" />
+    <Content Include="Tutorial\cs\images\View Reports\View Transaction Report\3.png" />
+    <Content Include="Tutorial\cs\index.html" />
+    <Content Include="Tutorial\cs\Scripts\jquery.slides.min.js" />
+    <Content Include="Tutorial\cs\Scripts\Tutorials.js" />
+    <Content Include="Tutorial\cs\Scripts\vendor\jquery-1.9.0.min.js" />
+    <Content Include="Tutorial\cs\Scripts\vendor\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Tutorial\cs\Scripts\vendor\jquery.slimscroll.js" />
+    <Content Include="Tutorial\cs\Scripts\vendor\modernizr-2.6.2.min.js" />
+    <Content Include="Tutorial\cs\Styles\forms.css" />
+    <Content Include="Tutorial\cs\Styles\jquery-ui.css" />
+    <Content Include="Tutorial\cs\Styles\layout.css" />
+    <Content Include="Tutorial\cs\Styles\main.css" />
+    <Content Include="Tutorial\cs\Styles\normalize.css" />
+    <Content Include="Tutorial\cs\Styles\tutorials.css" />
+    <Content Include="Tutorial\ct\images\Account Login\1.png" />
+    <Content Include="Tutorial\ct\images\Account Login\2.png" />
+    <Content Include="Tutorial\ct\images\Account Login\3.png" />
+    <Content Include="Tutorial\ct\images\Calculate Postage Value\1.png" />
+    <Content Include="Tutorial\ct\images\Calculate Postage Value\2.png" />
+    <Content Include="Tutorial\ct\images\Calculate Postage Value\3.png" />
+    <Content Include="Tutorial\ct\images\Calculate Postage Value\4.png" />
+    <Content Include="Tutorial\ct\images\Calculate Postage Value\5.png" />
+    <Content Include="Tutorial\ct\images\Calculate Postage Value\6.png" />
+    <Content Include="Tutorial\ct\images\Create Bulk Order\1.png" />
+    <Content Include="Tutorial\ct\images\Create Bulk Order\10.png" />
+    <Content Include="Tutorial\ct\images\Create Bulk Order\11.png" />
+    <Content Include="Tutorial\ct\images\Create Bulk Order\2.png" />
+    <Content Include="Tutorial\ct\images\Create Bulk Order\3.png" />
+    <Content Include="Tutorial\ct\images\Create Bulk Order\4.png" />
+    <Content Include="Tutorial\ct\images\Create Bulk Order\5.png" />
+    <Content Include="Tutorial\ct\images\Create Bulk Order\6.png" />
+    <Content Include="Tutorial\ct\images\Create Bulk Order\7.png" />
+    <Content Include="Tutorial\ct\images\Create Bulk Order\8.png" />
+    <Content Include="Tutorial\ct\images\Create Bulk Order\9.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Registered User\1.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Registered User\10.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Registered User\11.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Registered User\2.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Registered User\3.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Registered User\4.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Registered User\5.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Registered User\6.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Registered User\7.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Registered User\8.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Registered User\9.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Walk-in Customer\1.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Walk-in Customer\10.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Walk-in Customer\11.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Walk-in Customer\12.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Walk-in Customer\2.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Walk-in Customer\3.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Walk-in Customer\4.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Walk-in Customer\5.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Walk-in Customer\6.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Walk-in Customer\7.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Walk-in Customer\8.png" />
+    <Content Include="Tutorial\ct\images\Create Individual Order - Walk-in Customer\9.png" />
+    <Content Include="Tutorial\ct\images\Create Sub Account\1.png" />
+    <Content Include="Tutorial\ct\images\Create Sub Account\2.png" />
+    <Content Include="Tutorial\ct\images\Create Sub Account\3.png" />
+    <Content Include="Tutorial\ct\images\Create Sub Account\4.png" />
+    <Content Include="Tutorial\ct\images\Create Sub Account\5.png" />
+    <Content Include="Tutorial\ct\images\Create Sub Account\6.png" />
+    <Content Include="Tutorial\ct\images\flow chart-01.jpg" />
+    <Content Include="Tutorial\ct\images\flow chart-02.jpg" />
+    <Content Include="Tutorial\ct\images\flow-chart-04.jpg" />
+    <Content Include="Tutorial\ct\images\flow-chart-04_cs.jpg" />
+    <Content Include="Tutorial\ct\images\flow-chart-04_ct.jpg" />
+    <Content Include="Tutorial\ct\images\flow_chart-03.jpg" />
+    <Content Include="Tutorial\ct\images\Hand-icon.png" />
+    <Content Include="Tutorial\ct\images\Import Orders from ebay\1.png" />
+    <Content Include="Tutorial\ct\images\Import Orders from ebay\10.png" />
+    <Content Include="Tutorial\ct\images\Import Orders from ebay\11.png" />
+    <Content Include="Tutorial\ct\images\Import Orders from ebay\1c.png" />
+    <Content Include="Tutorial\ct\images\Import Orders from ebay\2.png" />
+    <Content Include="Tutorial\ct\images\Import Orders from ebay\3.png" />
+    <Content Include="Tutorial\ct\images\Import Orders from ebay\4.png" />
+    <Content Include="Tutorial\ct\images\Import Orders from ebay\5.png" />
+    <Content Include="Tutorial\ct\images\Import Orders from ebay\6.png" />
+    <Content Include="Tutorial\ct\images\Import Orders from ebay\7.png" />
+    <Content Include="Tutorial\ct\images\Import Orders from ebay\8.png" />
+    <Content Include="Tutorial\ct\images\logo.png" />
+    <Content Include="Tutorial\ct\images\Logo_cs.png" />
+    <Content Include="Tutorial\ct\images\Logo_ct.png" />
+    <Content Include="Tutorial\ct\images\Mail Preparation Steps\2.jpg" />
+    <Content Include="Tutorial\ct\images\next.png" />
+    <Content Include="Tutorial\ct\images\pagination.png" />
+    <Content Include="Tutorial\ct\images\previous.png" />
+    <Content Include="Tutorial\ct\images\quantium.png" />
+    <Content Include="Tutorial\ct\images\Register New User\1.png" />
+    <Content Include="Tutorial\ct\images\Register New User\3.png" />
+    <Content Include="Tutorial\ct\images\Register New User\4.png" />
+    <Content Include="Tutorial\ct\images\singapore_post.png" />
+    <Content Include="Tutorial\ct\images\Track Order\Registered User\1.png" />
+    <Content Include="Tutorial\ct\images\Track Order\Registered User\2.png" />
+    <Content Include="Tutorial\ct\images\Track Order\Registered User\3.png" />
+    <Content Include="Tutorial\ct\images\Track Order\Walk-in Customer\1.png" />
+    <Content Include="Tutorial\ct\images\Track Order\Walk-in Customer\2.png" />
+    <Content Include="Tutorial\ct\images\Track Order\Walk-in Customer\3.png" />
+    <Content Include="Tutorial\ct\images\View Order History\1.png" />
+    <Content Include="Tutorial\ct\images\View Order History\2.png" />
+    <Content Include="Tutorial\ct\images\View Order History\3.png" />
+    <Content Include="Tutorial\ct\images\View Reports\View Commercial Invoice\1.png" />
+    <Content Include="Tutorial\ct\images\View Reports\View Commercial Invoice\2.png" />
+    <Content Include="Tutorial\ct\images\View Reports\View Commercial Invoice\3.png" />
+    <Content Include="Tutorial\ct\images\View Reports\View Invoice Credit Note\1.png" />
+    <Content Include="Tutorial\ct\images\View Reports\View Invoice Credit Note\2.png" />
+    <Content Include="Tutorial\ct\images\View Reports\View Invoice Credit Note\3.png" />
+    <Content Include="Tutorial\ct\images\View Reports\View Shipping label\1.png" />
+    <Content Include="Tutorial\ct\images\View Reports\View Shipping label\2.png" />
+    <Content Include="Tutorial\ct\images\View Reports\View Tax Invoice\1.png" />
+    <Content Include="Tutorial\ct\images\View Reports\View Tax Invoice\2.png" />
+    <Content Include="Tutorial\ct\images\View Reports\View Tax Invoice\3.png" />
+    <Content Include="Tutorial\ct\images\View Reports\View Transaction Report\1.png" />
+    <Content Include="Tutorial\ct\images\View Reports\View Transaction Report\2.png" />
+    <Content Include="Tutorial\ct\images\View Reports\View Transaction Report\3.png" />
+    <Content Include="Tutorial\ct\index.html" />
+    <Content Include="Tutorial\ct\Scripts\jquery.slides.min.js" />
+    <Content Include="Tutorial\ct\Scripts\Tutorials.js" />
+    <Content Include="Tutorial\ct\Scripts\vendor\jquery-1.9.0.min.js" />
+    <Content Include="Tutorial\ct\Scripts\vendor\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Tutorial\ct\Scripts\vendor\jquery.slimscroll.js" />
+    <Content Include="Tutorial\ct\Scripts\vendor\modernizr-2.6.2.min.js" />
+    <Content Include="Tutorial\ct\Styles\forms.css" />
+    <Content Include="Tutorial\ct\Styles\jquery-ui.css" />
+    <Content Include="Tutorial\ct\Styles\layout.css" />
+    <Content Include="Tutorial\ct\Styles\main.css" />
+    <Content Include="Tutorial\ct\Styles\normalize.css" />
+    <Content Include="Tutorial\ct\Styles\tutorials.css" />
+    <Content Include="Tutorial\images\Account Login\1.png" />
+    <Content Include="Tutorial\images\Account Login\2.png" />
+    <Content Include="Tutorial\images\Account Login\3.png" />
+    <Content Include="Tutorial\images\Calculate Postage Value\1.png" />
+    <Content Include="Tutorial\images\Calculate Postage Value\2.png" />
+    <Content Include="Tutorial\images\Calculate Postage Value\3.png" />
+    <Content Include="Tutorial\images\Calculate Postage Value\4.png" />
+    <Content Include="Tutorial\images\Calculate Postage Value\5.png" />
+    <Content Include="Tutorial\images\Calculate Postage Value\6.png" />
+    <Content Include="Tutorial\images\Create Bulk Order\1.png" />
+    <Content Include="Tutorial\images\Create Bulk Order\10.png" />
+    <Content Include="Tutorial\images\Create Bulk Order\11.png" />
+    <Content Include="Tutorial\images\Create Bulk Order\2.png" />
+    <Content Include="Tutorial\images\Create Bulk Order\3.png" />
+    <Content Include="Tutorial\images\Create Bulk Order\4.png" />
+    <Content Include="Tutorial\images\Create Bulk Order\5.png" />
+    <Content Include="Tutorial\images\Create Bulk Order\6.png" />
+    <Content Include="Tutorial\images\Create Bulk Order\7.png" />
+    <Content Include="Tutorial\images\Create Bulk Order\8.png" />
+    <Content Include="Tutorial\images\Create Bulk Order\9.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Registered User\1.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Registered User\10.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Registered User\11.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Registered User\2.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Registered User\3.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Registered User\4.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Registered User\5.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Registered User\6.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Registered User\7.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Registered User\8.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Registered User\9.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Walk-in Customer\1.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Walk-in Customer\10.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Walk-in Customer\11.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Walk-in Customer\12.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Walk-in Customer\2.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Walk-in Customer\3.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Walk-in Customer\4.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Walk-in Customer\5.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Walk-in Customer\6.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Walk-in Customer\7.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Walk-in Customer\8.png" />
+    <Content Include="Tutorial\images\Create Individual Order - Walk-in Customer\9.png" />
+    <Content Include="Tutorial\images\Create Sub Account\1.png" />
+    <Content Include="Tutorial\images\Create Sub Account\2.png" />
+    <Content Include="Tutorial\images\Create Sub Account\3.png" />
+    <Content Include="Tutorial\images\Create Sub Account\4.png" />
+    <Content Include="Tutorial\images\Create Sub Account\5.png" />
+    <Content Include="Tutorial\images\Create Sub Account\7.png" />
+    <Content Include="Tutorial\images\flow chart-01.jpg" />
+    <Content Include="Tutorial\images\flow chart-02.jpg" />
+    <Content Include="Tutorial\images\flow-chart-04.jpg" />
+    <Content Include="Tutorial\images\flow-chart-04_cs.jpg" />
+    <Content Include="Tutorial\images\flow-chart-04_ct.jpg" />
+    <Content Include="Tutorial\images\flow_chart-03.jpg" />
+    <Content Include="Tutorial\images\Hand-icon.png" />
+    <Content Include="Tutorial\images\Import Orders from ebay\1.png" />
+    <Content Include="Tutorial\images\Import Orders from ebay\10.png" />
+    <Content Include="Tutorial\images\Import Orders from ebay\11.png" />
+    <Content Include="Tutorial\images\Import Orders from ebay\2.png" />
+    <Content Include="Tutorial\images\Import Orders from ebay\3.png" />
+    <Content Include="Tutorial\images\Import Orders from ebay\4.png" />
+    <Content Include="Tutorial\images\Import Orders from ebay\5.png" />
+    <Content Include="Tutorial\images\Import Orders from ebay\6.png" />
+    <Content Include="Tutorial\images\Import Orders from ebay\7.png" />
+    <Content Include="Tutorial\images\Import Orders from ebay\8.png" />
+    <Content Include="Tutorial\images\logo.png" />
+    <Content Include="Tutorial\images\Mail Preparation Steps\2.jpg" />
+    <Content Include="Tutorial\images\next.png" />
+    <Content Include="Tutorial\images\pagination.png" />
+    <Content Include="Tutorial\images\previous.png" />
+    <Content Include="Tutorial\images\quantium.png" />
+    <Content Include="Tutorial\images\Register New User\1.png" />
+    <Content Include="Tutorial\images\Register New User\3.png" />
+    <Content Include="Tutorial\images\Register New User\4.png" />
+    <Content Include="Tutorial\images\singapore_post.png" />
+    <Content Include="Tutorial\images\Track Order\Registered User\1.png" />
+    <Content Include="Tutorial\images\Track Order\Registered User\2.png" />
+    <Content Include="Tutorial\images\Track Order\Registered User\3.png" />
+    <Content Include="Tutorial\images\Track Order\Walk-in Customer\1.png" />
+    <Content Include="Tutorial\images\Track Order\Walk-in Customer\2.png" />
+    <Content Include="Tutorial\images\Track Order\Walk-in Customer\3.png" />
+    <Content Include="Tutorial\images\View Order History\1.png" />
+    <Content Include="Tutorial\images\View Order History\2.png" />
+    <Content Include="Tutorial\images\View Order History\3.png" />
+    <Content Include="Tutorial\images\View Reports\View Commercial Invoice\1.png" />
+    <Content Include="Tutorial\images\View Reports\View Commercial Invoice\2.png" />
+    <Content Include="Tutorial\images\View Reports\View Commercial Invoice\3.png" />
+    <Content Include="Tutorial\images\View Reports\View Invoice Credit Note\1.png" />
+    <Content Include="Tutorial\images\View Reports\View Invoice Credit Note\2.png" />
+    <Content Include="Tutorial\images\View Reports\View Invoice Credit Note\3.png" />
+    <Content Include="Tutorial\images\View Reports\View Shipping label\1.png" />
+    <Content Include="Tutorial\images\View Reports\View Shipping label\2.png" />
+    <Content Include="Tutorial\images\View Reports\View Tax Invoice\1.png" />
+    <Content Include="Tutorial\images\View Reports\View Tax Invoice\2.png" />
+    <Content Include="Tutorial\images\View Reports\View Tax Invoice\3.png" />
+    <Content Include="Tutorial\images\View Reports\View Transaction Report\1.png" />
+    <Content Include="Tutorial\images\View Reports\View Transaction Report\2.png" />
+    <Content Include="Tutorial\images\View Reports\View Transaction Report\3.png" />
+    <Content Include="Tutorial\index.html" />
+    <Content Include="Tutorial\Scripts\jquery.slides.min.js" />
+    <Content Include="Tutorial\Scripts\Tutorials.js" />
+    <Content Include="Tutorial\Scripts\vendor\jquery-1.9.0.min.js" />
+    <Content Include="Tutorial\Scripts\vendor\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Tutorial\Scripts\vendor\jquery.slimscroll.js" />
+    <Content Include="Tutorial\Scripts\vendor\modernizr-2.6.2.min.js" />
+    <Content Include="Tutorial\Styles\AdminCss\adminBO.css" />
+    <Content Include="Tutorial\Styles\AdminCss\BulkUpload.css" />
+    <Content Include="Tutorial\Styles\AdminCss\chosen_styles.css" />
+    <Content Include="Tutorial\Styles\AdminCss\datagrid.css" />
+    <Content Include="Tutorial\Styles\AdminCss\forms.css" />
+    <Content Include="Tutorial\Styles\AdminCss\jquery-ui.css" />
+    <Content Include="Tutorial\Styles\AdminCss\layout.css" />
+    <Content Include="Tutorial\Styles\AdminCss\le-frog\jquery-ui.css" />
+    <Content Include="Tutorial\Styles\AdminCss\le-frog\jquery.ui.theme.css" />
+    <Content Include="Tutorial\Styles\AdminCss\main.css" />
+    <Content Include="Tutorial\Styles\AdminCss\ManualTrackingAllocation.css" />
+    <Content Include="Tutorial\Styles\AdminCss\MasterCodeConfiguration.css" />
+    <Content Include="Tutorial\Styles\AdminCss\normalize.css" />
+    <Content Include="Tutorial\Styles\AdminCss\OrderEntry.css" />
+    <Content Include="Tutorial\Styles\AdminCss\reportlayout.css" />
+    <Content Include="Tutorial\Styles\AdminCss\TrackingRangeAllocation.css" />
+    <Content Include="Tutorial\Styles\chosen_styles.css" />
+    <Content Include="Tutorial\Styles\forms.css" />
+    <Content Include="Tutorial\Styles\jquery-ui.css" />
+    <Content Include="Tutorial\Styles\layout.css" />
+    <Content Include="Tutorial\Styles\le-frog\jquery-ui.css" />
+    <Content Include="Tutorial\Styles\le-frog\jquery.ui.theme.css" />
+    <Content Include="Tutorial\Styles\main.css" />
+    <Content Include="Tutorial\Styles\normalize.css" />
+    <Content Include="Tutorial\Styles\tutorials.css" />
+    <Content Include="users.xml" />
+    <Content Include="Views\CustomerPortal\GlobalHeaderFooter\FooterControl.html" />
+    <Content Include="Views\CustomerPortal\GlobalHeaderFooter\HeaderControl.html" />
+    <Content Include="Views\CustomerPortal\GlobalHeaderFooter\HeadercontroloValidation.js" />
+    <Content Include="ApplicationSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="bin\AspNetSamples_Nvp.dll.refresh" />
+    <None Include="bin\log4net.dll.refresh" />
+    <None Include="bin\paypal_base.dll.refresh" />
+    <Content Include="bin\SingPost.EzyParcels.ReportGenerationCoreLogic.dll.config" />
+    <None Include="Content\Documents\AXA insurance claim form.doc" />
+    <None Include="Content\Documents\AXA insurance claim form.pdf" />
+    <None Include="Content\Documents\Data Mapper tutorial-1.2.1.pdf" />
+    <Content Include="Content\Documents\Data Mapper tutorial-1.2.1.zip" />
+    <None Include="Content\Documents\ezyparcels_premium.xls" />
+    <None Include="Content\Documents\ezyparcels_Priority.xls" />
+    <None Include="Content\Documents\ezyparcels Priority_sg.xls" />
+    <None Include="Content\Documents\ezyparcels_Registered.xls" />
+    <None Include="Content\Documents\ezyparcels Registered_sg.xls" />
+    <None Include="Content\Documents\ezyparcels_RegPlus.xls" />
+    <None Include="Content\Documents\ezyparcels RegPlus_sg.xls" />
+    <None Include="Content\Documents\ezyparcels_Services_English.pdf" />
+    <None Include="Content\Documents\ezyparcels_Services_Japanese.pdf" />
+    <None Include="Content\Documents\ezyparcels_Services_Simplified_Chinese.pdf" />
+    <None Include="Content\Documents\ezyparcels_Services_Traditional_Chinese.pdf" />
+    <None Include="Content\Documents\ezyparcels_Standards.xls" />
+    <None Include="Content\Documents\ezyparcels Standards_070613.xls" />
+    <None Include="Content\Documents\ezyparcels Standards_sg.xls" />
+    <None Include="Content\Documents\ezyparcelsInsuranceGuide.pdf" />
+    <None Include="Content\Documents\ezyparcelsInsuranceGuide.ppt" />
+    <None Include="Content\Documents\ezyparcelsInsuranceGuide_OAC.pdf" />
+    <Content Include="Content\Documents\FontInstalation.zip" />
+    <Content Include="Content\Documents\How_to_install_fonts.zip" />
+    <None Include="Content\Documents\IE Configuration Guide for Bulk UploadCL1808.doc" />
+    <None Include="Content\Documents\IE_Configuration_Guide_for_Bulk_UploadCL1808.pdf" />
+    <None Include="Content\Documents\Insurance Document.pdf" />
+    <None Include="Content\Documents\Insurance Guide [Compatibility Mode].pdf" />
+    <None Include="Content\Documents\Insurance Leaflet_OAC.pdf" />
+    <None Include="Content\Documents\Insurancedoc-Websiteandservice%28OLD - Backup on 20Jun13%29.pdf" />
+    <None Include="Content\Documents\Insurancedoc-Websiteandservice%28OLD - Backup on 25Oct13%29.pdf" />
+    <None Include="Content\Documents\Insurancedoc-Websiteandservice.pdf" />
+    <None Include="Content\Documents\OAC insurance Claim Form.pdf" />
+    <None Include="Content\Documents\OAC.pdf" />
+    <None Include="Content\Documents\Privacy Policy - 6May11.pdf" />
+    <None Include="Content\Documents\PrivacyPolicy-26Nov.pdf" />
+    <None Include="Content\Documents\PrivacyPolicy-26Nov_bkp.pdf" />
+    <None Include="Content\Documents\QS_at_a_Glance_English.pdf" />
+    <None Include="Content\Documents\QS_at_a_Glance_Japanese.pdf" />
+    <None Include="Content\Documents\QS_at_a_Glance_Simplified_Chinese.pdf" />
+    <None Include="Content\Documents\QS_at_a_Glance_Traditional_Chinese.pdf" />
+    <Content Include="Content\Documents\quantium.zip" />
+    <None Include="Content\Documents\requestProcess.pdf" />
+    <Content Include="Content\Documents\requestProcess.zip" />
+    <None Include="Content\Documents\Routing Matrix Template.xls" />
+    <None Include="Content\Documents\serverStartup.pdf" />
+    <Content Include="Content\Documents\serverStartup.zip" />
+    <None Include="Content\Documents\Symbian 4300-pdf.pdf" />
+    <Content Include="Content\Documents\Symbian 4300-pdf.zip" />
+    <None Include="Content\Documents\tempFile\AboutUs_CS.docx" />
+    <None Include="Content\Documents\tempFile\AboutUs_CT.docx" />
+    <None Include="Content\Documents\tempFile\AboutUs_EN.docx" />
+    <None Include="Content\Documents\tempFile\CompanyDevelopment_CS.docx" />
+    <None Include="Content\Documents\tempFile\CompanyDevelopment_CT.docx" />
+    <None Include="Content\Documents\tempFile\CompanyDevelopment_EN.docx" />
+    <None Include="Content\Documents\tempFile\EzyparcelPremium_CS.docx" />
+    <None Include="Content\Documents\tempFile\EzyparcelPremium_CT .docx" />
+    <None Include="Content\Documents\tempFile\EzyparcelPremium_EN.docx" />
+    <None Include="Content\Documents\tempFile\EzyparcelPriority_CS.docx" />
+    <None Include="Content\Documents\tempFile\EzyparcelPriority_CT.docx" />
+    <None Include="Content\Documents\tempFile\EzyparcelPriority_EN.docx" />
+    <None Include="Content\Documents\tempFile\EzyparcelRegisteredPlus_CS.docx" />
+    <None Include="Content\Documents\tempFile\EzyparcelRegisteredPlus_CT.docx" />
+    <None Include="Content\Documents\tempFile\EzyparcelRegisteredPlus_EN.docx" />
+    <None Include="Content\Documents\tempFile\EzyparcelRegistered_CS.docx" />
+    <None Include="Content\Documents\tempFile\EzyparcelRegistered_CT.docx" />
+    <None Include="Content\Documents\tempFile\EzyparcelRegistered_EN.docx" />
+    <None Include="Content\Documents\tempFile\ezyparcelsStandardCT.docx" />
+    <None Include="Content\Documents\tempFile\EzyparcelStandard_CS.docx" />
+    <None Include="Content\Documents\tempFile\EzyparcelStandard_EN.docx" />
+    <None Include="Content\Documents\tempFile\Features_CS.docx" />
+    <None Include="Content\Documents\tempFile\Features_CT.docx" />
+    <None Include="Content\Documents\tempFile\Features_EN.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationApr_CS.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationApr_CT.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationApr_EN.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationAug_CS.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationAug_CT.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationAug_EN.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationDec_CS.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationDec_CT.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationDec_EN.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationFeb_CS.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationFeb_CT.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationFeb_EN.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationJan_CS.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationJan_CT.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationJan_EN.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationJul_CS.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationJul_CT.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationJul_EN.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationJun_CS.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationJun_CT.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationJun_EN.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationMar_CS.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationMar_CT.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationMar_EN.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationMay_CS.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationMay_CT.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationMay_EN.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationNov_CS.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationNov_CT.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationNov_EN.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationOct_CS.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationOct_CT.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationOct_EN.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationSep_CS.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationSep_CT.docx" />
+    <None Include="Content\Documents\tempFile\LatestInformationSep_EN.docx" />
+    <None Include="Content\Documents\Term of use - Website and service 22Dec11.pdf" />
+    <None Include="Content\Documents\Term of use - Website and service 6May11.pdf" />
+    <None Include="Content\Documents\Termofuse-Websiteandservice.pdf" />
+    <None Include="Content\Documents\Termofuse-Websiteandservice_9May_bkp.pdf" />
+    <None Include="Content\Documents\Termofuse-Websiteandservice_Old_Nov11.pdf" />
+    <None Include="Content\Documents\terms_and_condition.pdf" />
+    <None Include="Content\Documents\tutorial.pdf" />
+    <Content Include="Content\Documents\tutorial.zip" />
+    <None Include="Content\Documents\unix-command-summary.pdf" />
+    <Content Include="Content\Documents\unix-command-summary.zip" />
+    <None Include="Content\Documents\unixtoolbox.pdf" />
+    <Content Include="Content\Documents\unixtoolbox.zip" />
+    <None Include="Content\Documents\Workflow Component - Technical refernce document v0.1.pdf" />
+    <None Include="Ebay Templates\ezyparcels_premium_ebay.xls" />
+    <None Include="Ebay Templates\ezyparcels_Priority_ebay.xls" />
+    <None Include="Ebay Templates\ezyparcels_Registered_ebay.xls" />
+    <None Include="Ebay Templates\ezyparcels_Registered_Plus_ebay.xls" />
+    <None Include="Ebay Templates\ezyparcels_Standard_ebay.xls" />
+    <None Include="Images\tutorial\.DS_Store" />
+    <None Include="Images\tutorial\.~lock.Tutorial Template.xls#" />
+    <None Include="Images\tutorial\Account Login1\.DS_Store" />
+    <None Include="Images\tutorial\Calculate Postage Value\.DS_Store" />
+    <None Include="Images\tutorial\Create Bulk Order\.DS_Store" />
+    <None Include="Images\tutorial\Create Individual Order - Registered User\.DS_Store" />
+    <None Include="Images\tutorial\Create Individual Order - Walk-in Customer\.DS_Store" />
+    <None Include="Images\tutorial\Create Sub Account\.DS_Store" />
+    <None Include="Images\tutorial\Import Orders from ebay\.DS_Store" />
+    <None Include="Images\tutorial\Register New User\.DS_Store" />
+    <None Include="Images\tutorial\Track Order\.DS_Store" />
+    <None Include="Images\tutorial\Track Order\Registered User\.DS_Store" />
+    <None Include="Images\tutorial\Track Order\Walk-in Customer\.DS_Store" />
+    <None Include="Images\tutorial\View Order History\.DS_Store" />
+    <None Include="Images\tutorial\View Reports\.DS_Store" />
+    <None Include="Images\tutorial\View Reports\View Commercial Invoice\.DS_Store" />
+    <None Include="Images\tutorial\View Reports\View Invoice Credit Note\.DS_Store" />
+    <None Include="Images\tutorial\View Reports\View Shipping label\.DS_Store" />
+    <None Include="Images\tutorial\View Reports\View Tax Invoice\.DS_Store" />
+    <None Include="Images\tutorial\View Reports\View Transaction Report\.DS_Store" />
+    <None Include="Reports\CrystalReports\rejectiontransactiondetails.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rejectiontransactiondetails.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Templates\InsuranceTransactionRegionRepTemplate.xls" />
+    <None Include="Reports\Templates\InsuranceTransactionReportTemplate.xls" />
+    <None Include="Reports\Templates\PaypalReportTemplate.xls" />
+    <None Include="Reports\Templates\TransactionReportTemplate.xls" />
+    <None Include="Reports\Templates\TransactionReportTemplate.xlsx" />
+    <None Include="Scripts\vendor\Ebay Templates\ezyparcels premium_ebay.xls" />
+    <None Include="Scripts\vendor\Ebay Templates\ezyparcels Priority_ebay.xls" />
+    <None Include="Scripts\vendor\Ebay Templates\ezyparcels Registered Plus_ebay.xls" />
+    <None Include="Scripts\vendor\Ebay Templates\ezyparcels Registered_ebay.xls" />
+    <None Include="Scripts\vendor\Ebay Templates\ezyparcels Standards_ebay.xls" />
+    <None Include="Scripts\vendor\Ebay Templates\ezyparcels_premium_ebay.xls" />
+    <None Include="Scripts\vendor\Ebay Templates\ezyparcels_Priority_ebay.xls" />
+    <None Include="Scripts\vendor\Ebay Templates\ezyparcels_Registered_ebay.xls" />
+    <None Include="Scripts\vendor\Ebay Templates\ezyparcels_Registered_Plus_ebay.xls" />
+    <None Include="Scripts\vendor\Ebay Templates\ezyparcels_Standard_ebay.xls" />
+    <None Include="Images\ImgNew\Thumbs.db" />
+    <None Include="Images\Thumbs.db" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\CustomerPortal\BulkUploadView.cshtml" />
+    <Content Include="Views\CustomerPortal\GlobalHeaderFooter\TrackAfterLogin.cshtml" />
+    <Content Include="Views\CustomerPortal\GlobalHeaderFooter\TrackBeforeLogin.cshtml" />
+    <None Include="Reports\CrystalReports\cn22.xsc">
+      <DependentUpon>cn22.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\CrystalReports\cn22.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cn22.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\CrystalReports\cn22.xss">
+      <DependentUpon>cn22.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\CrystalReports\cn22.xsx">
+      <DependentUpon>cn22.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\CrystalReports\connote.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>connote1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\CrystalReports\connoteairparcel.xsd" />
+    <None Include="Reports\CrystalReports\connoteairparcel.xss">
+      <DependentUpon>connoteairparcel.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\CrystalReports\connoteairparcel.xsx">
+      <DependentUpon>connoteairparcel.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\CrystalReports\TaxInvoice.xsc">
+      <DependentUpon>TaxInvoice.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\CrystalReports\TaxInvoice.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TaxInvoice.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\CrystalReports\TaxInvoice.xss">
+      <DependentUpon>TaxInvoice.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Templates\TransactionReportsaurabh11122013.xls" />
+    <None Include="Reports\Templates\TransactionReportshreyas11122013.xls" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\CustomerPortal\Filter.cshtml" />
+    <Content Include="Views\CustomerPortal\_OrderHistory.cshtml" />
+    <Content Include="Views\CustomerPortal\_ShippingLabel.cshtml" />
+    <Content Include="Views\CustomerPortal\_ComercialInvoiceReports.cshtml" />
+    <Content Include="Views\CustomerPortal\_TaxInvoiceReport.cshtml" />
+    <Content Include="Views\CustomerPortal\_PickUpAddress.cshtml" />
+    <Content Include="Views\CustomerPortal\_Notification.cshtml" />
+    <Content Include="Views\CustomerPortal\Ebay\EbayLoginSuccess.cshtml" />
+    <Content Include="Views\BackOffice\RoutingMatrix\_RotingMatrixRuleEntry.cshtml" />
+    <Content Include="Views\BackOffice\Order\BulkUploadView.cshtml" />
+    <Content Include="Views\CustomerPortal\SpecialPaymentOption.cshtml" />
+    <Content Include="Views\CustomerPortal\SessionTimeOut.cshtml" />
+    <Content Include="Views\CustomerPortal\MultipleLoginError.cshtml" />
+    <Content Include="Views\BackOffice\ProfileManagement\CustomerServiceProfile.cshtml" />
+    <Content Include="Views\CustomerPortal\Tutorial.cshtml" />
+    <Content Include="Views\BackOffice\RoutingMatrix\_ManualAdvanceSearch.cshtml" />
+    <None Include="Tutorial\cs\images\.DS_Store" />
+    <None Include="Tutorial\cs\images\.~lock.Tutorial Template.xls#" />
+    <None Include="Tutorial\cs\images\Create Bulk Order\desktop.ini" />
+    <None Include="Tutorial\cs\images\Create Individual Order - Registered User\desktop.ini" />
+    <None Include="Tutorial\cs\images\Create Individual Order - Walk-in Customer\desktop.ini" />
+    <None Include="Tutorial\cs\images\Create Sub Account\desktop.ini" />
+    <None Include="Tutorial\cs\images\Import Orders from ebay\desktop.ini" />
+    <None Include="Tutorial\cs\images\Mail Preparation Steps\desktop.ini" />
+    <None Include="Tutorial\cs\images\Register New User\desktop.ini" />
+    <None Include="Tutorial\cs\images\Track Order\desktop.ini" />
+    <None Include="Tutorial\cs\images\Track Order\Walk-in Customer\desktop.ini" />
+    <None Include="Tutorial\cs\images\View Reports\desktop.ini" />
+    <None Include="Tutorial\cs\images\View Reports\View Shipping label\desktop.ini" />
+    <None Include="Tutorial\cs\test.json" />
+    <None Include="Tutorial\ct\images\.DS_Store" />
+    <None Include="Tutorial\ct\images\.~lock.Tutorial Template.xls#" />
+    <None Include="Tutorial\ct\images\Create Bulk Order\desktop.ini" />
+    <None Include="Tutorial\ct\images\Create Individual Order - Registered User\desktop.ini" />
+    <None Include="Tutorial\ct\images\Create Individual Order - Walk-in Customer\desktop.ini" />
+    <None Include="Tutorial\ct\images\Create Sub Account\desktop.ini" />
+    <None Include="Tutorial\ct\images\Import Orders from ebay\desktop.ini" />
+    <None Include="Tutorial\ct\images\Mail Preparation Steps\desktop.ini" />
+    <None Include="Tutorial\ct\images\Register New User\desktop.ini" />
+    <None Include="Tutorial\ct\images\Track Order\desktop.ini" />
+    <None Include="Tutorial\ct\images\Track Order\Walk-in Customer\desktop.ini" />
+    <None Include="Tutorial\ct\images\View Reports\desktop.ini" />
+    <None Include="Tutorial\ct\images\View Reports\View Shipping label\desktop.ini" />
+    <None Include="Tutorial\ct\test.json" />
+    <None Include="Tutorial\images\Create Bulk Order\desktop.ini" />
+    <None Include="Tutorial\images\Create Individual Order - Registered User\desktop.ini" />
+    <None Include="Tutorial\images\Create Individual Order - Walk-in Customer\desktop.ini" />
+    <None Include="Tutorial\images\Create Sub Account\desktop.ini" />
+    <None Include="Tutorial\images\Import Orders from ebay\desktop.ini" />
+    <None Include="Tutorial\images\Mail Preparation Steps\desktop.ini" />
+    <None Include="Tutorial\images\Register New User\desktop.ini" />
+    <None Include="Tutorial\images\Track Order\desktop.ini" />
+    <None Include="Tutorial\images\Track Order\Walk-in Customer\desktop.ini" />
+    <None Include="Tutorial\images\View Reports\desktop.ini" />
+    <None Include="Tutorial\images\View Reports\View Shipping label\desktop.ini" />
+    <None Include="Tutorial\Styles\.DS_Store" />
+    <None Include="Tutorial\Styles\AdminCss\.DS_Store" />
+    <None Include="Tutorial\Styles\AdminCss\.svn\.DS_Store" />
+    <None Include="Tutorial\Styles\AdminCss\.svn\all-wcprops" />
+    <None Include="Tutorial\Styles\AdminCss\.svn\entries" />
+    <None Include="Tutorial\Styles\AdminCss\.svn\text-base\chosen_styles.css.svn-base" />
+    <None Include="Tutorial\Styles\AdminCss\.svn\text-base\datagrid.css.svn-base" />
+    <None Include="Tutorial\Styles\AdminCss\.svn\text-base\forms.css.svn-base" />
+    <None Include="Tutorial\Styles\AdminCss\.svn\text-base\jquery-ui.css.svn-base" />
+    <None Include="Tutorial\Styles\AdminCss\.svn\text-base\layout.css.svn-base" />
+    <None Include="Tutorial\Styles\AdminCss\.svn\text-base\main.css.svn-base" />
+    <None Include="Tutorial\Styles\AdminCss\.svn\text-base\normalize.css.svn-base" />
+    <None Include="Tutorial\Styles\AdminCss\le-frog\.DS_Store" />
+    <None Include="Tutorial\Styles\AdminCss\le-frog\.svn\.DS_Store" />
+    <None Include="Tutorial\Styles\AdminCss\le-frog\.svn\all-wcprops" />
+    <None Include="Tutorial\Styles\AdminCss\le-frog\.svn\entries" />
+    <None Include="Tutorial\Styles\AdminCss\le-frog\.svn\text-base\jquery-ui.css.svn-base" />
+    <None Include="Tutorial\Styles\AdminCss\le-frog\.svn\text-base\jquery.ui.theme.css.svn-base" />
+    <None Include="Tutorial\Styles\AdminCss\le-frog\images\.DS_Store" />
+    <None Include="Tutorial\Styles\AdminCss\le-frog\images\.svn\all-wcprops" />
+    <None Include="Tutorial\Styles\AdminCss\le-frog\images\.svn\entries" />
+    <None Include="Tutorial\Styles\le-frog\.DS_Store" />
+    <None Include="Tutorial\Styles\le-frog\.svn\.DS_Store" />
+    <None Include="Tutorial\Styles\le-frog\.svn\all-wcprops" />
+    <None Include="Tutorial\Styles\le-frog\.svn\entries" />
+    <None Include="Tutorial\Styles\le-frog\.svn\text-base\jquery-ui.css.svn-base" />
+    <None Include="Tutorial\Styles\le-frog\.svn\text-base\jquery.ui.theme.css.svn-base" />
+    <None Include="Tutorial\Styles\le-frog\images\.DS_Store" />
+    <None Include="Tutorial\Styles\le-frog\images\.svn\all-wcprops" />
+    <None Include="Tutorial\Styles\le-frog\images\.svn\entries" />
+    <None Include="Tutorial\test.json" />
+    <Content Include="Views\CustomerPortal\Generic_Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ApplicationCode\tempFile\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\pdf\.svn\props\" />
+    <Folder Include="Content\pdf\.svn\tmp\prop-base\" />
+    <Folder Include="Content\pdf\.svn\tmp\props\" />
+    <Folder Include="Content\pdf\.svn\tmp\text-base\" />
+    <Folder Include="Content\Styles\AdminCss\.svn\prop-base\" />
+    <Folder Include="Content\Styles\AdminCss\.svn\props\" />
+    <Folder Include="Content\Styles\AdminCss\.svn\tmp\prop-base\" />
+    <Folder Include="Content\Styles\AdminCss\.svn\tmp\props\" />
+    <Folder Include="Content\Styles\AdminCss\.svn\tmp\text-base\" />
+    <Folder Include="Content\Styles\AdminCss\le-frog\.svn\prop-base\" />
+    <Folder Include="Content\Styles\AdminCss\le-frog\.svn\props\" />
+    <Folder Include="Content\Styles\AdminCss\le-frog\.svn\tmp\prop-base\" />
+    <Folder Include="Content\Styles\AdminCss\le-frog\.svn\tmp\props\" />
+    <Folder Include="Content\Styles\AdminCss\le-frog\.svn\tmp\text-base\" />
+    <Folder Include="Content\Styles\AdminCss\le-frog\images\.svn\prop-base\" />
+    <Folder Include="Content\Styles\AdminCss\le-frog\images\.svn\props\" />
+    <Folder Include="Content\Styles\AdminCss\le-frog\images\.svn\text-base\" />
+    <Folder Include="Content\Styles\AdminCss\le-frog\images\.svn\tmp\prop-base\" />
+    <Folder Include="Content\Styles\AdminCss\le-frog\images\.svn\tmp\props\" />
+    <Folder Include="Content\Styles\AdminCss\le-frog\images\.svn\tmp\text-base\" />
+    <Folder Include="Content\Styles\le-frog\.svn\prop-base\" />
+    <Folder Include="Content\Styles\le-frog\.svn\props\" />
+    <Folder Include="Content\Styles\le-frog\.svn\tmp\prop-base\" />
+    <Folder Include="Content\Styles\le-frog\.svn\tmp\props\" />
+    <Folder Include="Content\Styles\le-frog\.svn\tmp\text-base\" />
+    <Folder Include="Content\Styles\le-frog\images\.svn\prop-base\" />
+    <Folder Include="Content\Styles\le-frog\images\.svn\props\" />
+    <Folder Include="Content\Styles\le-frog\images\.svn\text-base\" />
+    <Folder Include="Content\Styles\le-frog\images\.svn\tmp\prop-base\" />
+    <Folder Include="Content\Styles\le-frog\images\.svn\tmp\props\" />
+    <Folder Include="Content\Styles\le-frog\images\.svn\tmp\text-base\" />
+    <Folder Include="Content\Themes\" />
+    <Folder Include="Scripts\AdminScripts\.svn\prop-base\" />
+    <Folder Include="Scripts\AdminScripts\.svn\props\" />
+    <Folder Include="Scripts\AdminScripts\.svn\tmp\prop-base\" />
+    <Folder Include="Scripts\AdminScripts\.svn\tmp\props\" />
+    <Folder Include="Scripts\AdminScripts\.svn\tmp\text-base\" />
+    <Folder Include="Scripts\AdminScripts\vendor\.svn\prop-base\" />
+    <Folder Include="Scripts\AdminScripts\vendor\.svn\props\" />
+    <Folder Include="Scripts\AdminScripts\vendor\.svn\tmp\prop-base\" />
+    <Folder Include="Scripts\AdminScripts\vendor\.svn\tmp\props\" />
+    <Folder Include="Scripts\AdminScripts\vendor\.svn\tmp\text-base\" />
+    <Folder Include="Scripts\vendor\.svn\prop-base\" />
+    <Folder Include="Scripts\vendor\.svn\props\" />
+    <Folder Include="Scripts\vendor\.svn\tmp\prop-base\" />
+    <Folder Include="Scripts\vendor\.svn\tmp\props\" />
+    <Folder Include="Scripts\vendor\.svn\tmp\text-base\" />
+    <Folder Include="Services\" />
+    <Folder Include="tempFile\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\.svn\prop-base\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\.svn\props\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\.svn\text-base\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\.svn\tmp\prop-base\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\.svn\tmp\props\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\.svn\tmp\text-base\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\le-frog\.svn\prop-base\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\le-frog\.svn\props\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\le-frog\.svn\text-base\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\le-frog\.svn\tmp\prop-base\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\le-frog\.svn\tmp\props\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\le-frog\.svn\tmp\text-base\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\le-frog\images\.svn\prop-base\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\le-frog\images\.svn\props\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\le-frog\images\.svn\text-base\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\le-frog\images\.svn\tmp\prop-base\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\le-frog\images\.svn\tmp\props\" />
+    <Folder Include="Tutorial\cs\Styles\AdminCss\le-frog\images\.svn\tmp\text-base\" />
+    <Folder Include="Tutorial\cs\Styles\le-frog\.svn\prop-base\" />
+    <Folder Include="Tutorial\cs\Styles\le-frog\.svn\props\" />
+    <Folder Include="Tutorial\cs\Styles\le-frog\.svn\text-base\" />
+    <Folder Include="Tutorial\cs\Styles\le-frog\.svn\tmp\prop-base\" />
+    <Folder Include="Tutorial\cs\Styles\le-frog\.svn\tmp\props\" />
+    <Folder Include="Tutorial\cs\Styles\le-frog\.svn\tmp\text-base\" />
+    <Folder Include="Tutorial\cs\Styles\le-frog\images\.svn\prop-base\" />
+    <Folder Include="Tutorial\cs\Styles\le-frog\images\.svn\props\" />
+    <Folder Include="Tutorial\cs\Styles\le-frog\images\.svn\text-base\" />
+    <Folder Include="Tutorial\cs\Styles\le-frog\images\.svn\tmp\prop-base\" />
+    <Folder Include="Tutorial\cs\Styles\le-frog\images\.svn\tmp\props\" />
+    <Folder Include="Tutorial\cs\Styles\le-frog\images\.svn\tmp\text-base\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\.svn\prop-base\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\.svn\props\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\.svn\tmp\prop-base\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\.svn\tmp\props\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\.svn\tmp\text-base\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\le-frog\.svn\prop-base\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\le-frog\.svn\props\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\le-frog\.svn\tmp\prop-base\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\le-frog\.svn\tmp\props\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\le-frog\.svn\tmp\text-base\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\le-frog\images\.svn\prop-base\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\le-frog\images\.svn\props\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\le-frog\images\.svn\text-base\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\le-frog\images\.svn\tmp\prop-base\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\le-frog\images\.svn\tmp\props\" />
+    <Folder Include="Tutorial\ct\Styles\AdminCss\le-frog\images\.svn\tmp\text-base\" />
+    <Folder Include="Tutorial\ct\Styles\le-frog\.svn\prop-base\" />
+    <Folder Include="Tutorial\ct\Styles\le-frog\.svn\props\" />
+    <Folder Include="Tutorial\ct\Styles\le-frog\.svn\tmp\prop-base\" />
+    <Folder Include="Tutorial\ct\Styles\le-frog\.svn\tmp\props\" />
+    <Folder Include="Tutorial\ct\Styles\le-frog\.svn\tmp\text-base\" />
+    <Folder Include="Tutorial\ct\Styles\le-frog\images\.svn\prop-base\" />
+    <Folder Include="Tutorial\ct\Styles\le-frog\images\.svn\props\" />
+    <Folder Include="Tutorial\ct\Styles\le-frog\images\.svn\text-base\" />
+    <Folder Include="Tutorial\ct\Styles\le-frog\images\.svn\tmp\prop-base\" />
+    <Folder Include="Tutorial\ct\Styles\le-frog\images\.svn\tmp\props\" />
+    <Folder Include="Tutorial\ct\Styles\le-frog\images\.svn\tmp\text-base\" />
+    <Folder Include="Tutorial\images\Account Login1\" />
+    <Folder Include="Tutorial\Styles\AdminCss\.svn\prop-base\" />
+    <Folder Include="Tutorial\Styles\AdminCss\.svn\props\" />
+    <Folder Include="Tutorial\Styles\AdminCss\.svn\tmp\prop-base\" />
+    <Folder Include="Tutorial\Styles\AdminCss\.svn\tmp\props\" />
+    <Folder Include="Tutorial\Styles\AdminCss\.svn\tmp\text-base\" />
+    <Folder Include="Tutorial\Styles\AdminCss\le-frog\.svn\prop-base\" />
+    <Folder Include="Tutorial\Styles\AdminCss\le-frog\.svn\props\" />
+    <Folder Include="Tutorial\Styles\AdminCss\le-frog\.svn\tmp\prop-base\" />
+    <Folder Include="Tutorial\Styles\AdminCss\le-frog\.svn\tmp\props\" />
+    <Folder Include="Tutorial\Styles\AdminCss\le-frog\.svn\tmp\text-base\" />
+    <Folder Include="Tutorial\Styles\AdminCss\le-frog\images\.svn\prop-base\" />
+    <Folder Include="Tutorial\Styles\AdminCss\le-frog\images\.svn\props\" />
+    <Folder Include="Tutorial\Styles\AdminCss\le-frog\images\.svn\text-base\" />
+    <Folder Include="Tutorial\Styles\AdminCss\le-frog\images\.svn\tmp\prop-base\" />
+    <Folder Include="Tutorial\Styles\AdminCss\le-frog\images\.svn\tmp\props\" />
+    <Folder Include="Tutorial\Styles\AdminCss\le-frog\images\.svn\tmp\text-base\" />
+    <Folder Include="Tutorial\Styles\le-frog\.svn\prop-base\" />
+    <Folder Include="Tutorial\Styles\le-frog\.svn\props\" />
+    <Folder Include="Tutorial\Styles\le-frog\.svn\tmp\prop-base\" />
+    <Folder Include="Tutorial\Styles\le-frog\.svn\tmp\props\" />
+    <Folder Include="Tutorial\Styles\le-frog\.svn\tmp\text-base\" />
+    <Folder Include="Tutorial\Styles\le-frog\images\.svn\prop-base\" />
+    <Folder Include="Tutorial\Styles\le-frog\images\.svn\props\" />
+    <Folder Include="Tutorial\Styles\le-frog\images\.svn\text-base\" />
+    <Folder Include="Tutorial\Styles\le-frog\images\.svn\tmp\prop-base\" />
+    <Folder Include="Tutorial\Styles\le-frog\images\.svn\tmp\props\" />
+    <Folder Include="Tutorial\Styles\le-frog\images\.svn\tmp\text-base\" />
+    <Folder Include="Views\BackOffice\ContentManagement\StaticRepository\" />
+    <Folder Include="Views\BackOffice\ContentManagement\tempFile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CustomerPortal\About_Us.cshtml" />
+    <Content Include="Views\CustomerPortal\Change_Password.cshtml" />
+    <Content Include="Views\CustomerPortal\Company_Devlopement.cshtml" />
+    <Content Include="Views\CustomerPortal\Contact_Us.cshtml" />
+    <Content Include="Views\CustomerPortal\Downloads.cshtml" />
+    <Content Include="Views\CustomerPortal\FAQ.cshtml" />
+    <Content Include="Views\CustomerPortal\Features.cshtml" />
+    <Content Include="Views\CustomerPortal\Portal_Services.cshtml" />
+    <Content Include="Views\CustomerPortal\Index.cshtml" />
+    <Content Include="Views\CustomerPortal\Latest_Information.cshtml" />
+    <Content Include="Views\CustomerPortal\PostLogin.cshtml" />
+    <Content Include="Views\CustomerPortal\Privacy.cshtml" />
+    <Content Include="Views\CustomerPortal\Profile.cshtml" />
+    <Content Include="Views\CustomerPortal\Services.cshtml" />
+    <Content Include="Views\CustomerPortal\Sub_account_Creation.cshtml" />
+    <Content Include="Views\CustomerPortal\TermsOfUse.cshtml" />
+    <Content Include="Views\CustomerPortal\Trends_Logistic.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CustomerPortal\GlobalHeaderFooter\Footer.cshtml" />
+    <Content Include="Views\CustomerPortal\GlobalHeaderFooter\Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\pdf\.svn\all-wcprops" />
+    <None Include="Content\pdf\.svn\entries" />
+    <None Include="Content\pdf\.svn\prop-base\Insurancedoc-Websiteandservice.pdf.svn-base" />
+    <None Include="Content\pdf\.svn\prop-base\PrivacyPolicy6May11.pdf.svn-base" />
+    <None Include="Content\pdf\.svn\prop-base\TermofuseWebsiteandservice.pdf.svn-base" />
+    <None Include="Content\pdf\.svn\text-base\Insurancedoc-Websiteandservice.pdf.svn-base" />
+    <None Include="Content\pdf\.svn\text-base\PrivacyPolicy6May11.pdf.svn-base" />
+    <None Include="Content\pdf\.svn\text-base\TermofuseWebsiteandservice.pdf.svn-base" />
+    <None Include="Content\pdf\Insurancedoc-Websiteandservice.pdf" />
+    <None Include="Content\pdf\PrivacyPolicy6May11.pdf" />
+    <None Include="Content\pdf\TermofuseWebsiteandservice.pdf" />
+    <None Include="Content\Styles\AdminCss\.svn\all-wcprops" />
+    <None Include="Content\Styles\AdminCss\.svn\entries" />
+    <None Include="Content\Styles\AdminCss\.svn\text-base\chosen_styles.css.svn-base" />
+    <None Include="Content\Styles\AdminCss\.svn\text-base\datagrid.css.svn-base" />
+    <None Include="Content\Styles\AdminCss\.svn\text-base\forms.css.svn-base" />
+    <None Include="Content\Styles\AdminCss\.svn\text-base\jquery-ui.css.svn-base" />
+    <None Include="Content\Styles\AdminCss\.svn\text-base\layout.css.svn-base" />
+    <None Include="Content\Styles\AdminCss\.svn\text-base\main.css.svn-base" />
+    <None Include="Content\Styles\AdminCss\.svn\text-base\normalize.css.svn-base" />
+    <None Include="Content\Styles\AdminCss\le-frog\.svn\all-wcprops" />
+    <None Include="Content\Styles\AdminCss\le-frog\.svn\entries" />
+    <None Include="Content\Styles\AdminCss\le-frog\.svn\text-base\jquery-ui.css.svn-base" />
+    <None Include="Content\Styles\AdminCss\le-frog\.svn\text-base\jquery.ui.theme.css.svn-base" />
+    <None Include="Content\Styles\AdminCss\le-frog\images\.svn\all-wcprops" />
+    <None Include="Content\Styles\AdminCss\le-frog\images\.svn\entries" />
+    <None Include="Content\Styles\le-frog\.svn\all-wcprops" />
+    <None Include="Content\Styles\le-frog\.svn\entries" />
+    <None Include="Content\Styles\le-frog\.svn\text-base\jquery-ui.css.svn-base" />
+    <None Include="Content\Styles\le-frog\.svn\text-base\jquery.ui.theme.css.svn-base" />
+    <None Include="Content\Styles\le-frog\images\.svn\all-wcprops" />
+    <None Include="Content\Styles\le-frog\images\.svn\entries" />
+    <None Include="Scripts\AdminScripts\.svn\all-wcprops" />
+    <None Include="Scripts\AdminScripts\.svn\entries" />
+    <None Include="Scripts\AdminScripts\.svn\text-base\jquery.dataTables.js.svn-base" />
+    <None Include="Scripts\AdminScripts\.svn\text-base\jquery.dataTables.min.js.svn-base" />
+    <None Include="Scripts\AdminScripts\.svn\text-base\main.js.svn-base" />
+    <None Include="Scripts\AdminScripts\.svn\text-base\Placeholder.js.svn-base" />
+    <None Include="Scripts\AdminScripts\.svn\text-base\plugins.js.svn-base" />
+    <None Include="Scripts\AdminScripts\.svn\text-base\postlogin.js.svn-base" />
+    <None Include="Scripts\AdminScripts\.svn\text-base\Validation.js.svn-base" />
+    <None Include="Scripts\AdminScripts\vendor\.svn\all-wcprops" />
+    <None Include="Scripts\AdminScripts\vendor\.svn\entries" />
+    <None Include="Scripts\AdminScripts\vendor\.svn\text-base\chosen.jquery.min.js.svn-base" />
+    <None Include="Scripts\AdminScripts\vendor\.svn\text-base\corner.js.svn-base" />
+    <None Include="Scripts\AdminScripts\vendor\.svn\text-base\jquery-1.9.0.min.js.svn-base" />
+    <None Include="Scripts\AdminScripts\vendor\.svn\text-base\jquery-ui-1.9.2.custom.min.js.svn-base" />
+    <None Include="Scripts\AdminScripts\vendor\.svn\text-base\jquery.flip.js.svn-base" />
+    <None Include="Scripts\AdminScripts\vendor\.svn\text-base\jquery.slimscroll.js.svn-base" />
+    <None Include="Scripts\AdminScripts\vendor\.svn\text-base\jquery.timepicker.min.js.svn-base" />
+    <None Include="Scripts\AdminScripts\vendor\.svn\text-base\modernizr-2.6.2.min.js.svn-base" />
+    <None Include="Scripts\AdminScripts\vendor\.svn\text-base\tinycarousal.js.svn-base" />
+    <None Include="Scripts\vendor\.svn\all-wcprops" />
+    <None Include="Scripts\vendor\.svn\entries" />
+    <None Include="Scripts\vendor\.svn\text-base\chosen.jquery.min.js.svn-base" />
+    <None Include="Scripts\vendor\.svn\text-base\corner.js.svn-base" />
+    <None Include="Scripts\vendor\.svn\text-base\jquery-1.9.0.min.js.svn-base" />
+    <None Include="Scripts\vendor\.svn\text-base\jquery-ui-1.9.2.custom.min.js.svn-base" />
+    <None Include="Scripts\vendor\.svn\text-base\jquery.flip.js.svn-base" />
+    <None Include="Scripts\vendor\.svn\text-base\jquery.slimscroll.js.svn-base" />
+    <None Include="Scripts\vendor\.svn\text-base\jquery.timepicker.min.js.svn-base" />
+    <None Include="Scripts\vendor\.svn\text-base\modernizr-2.6.2.min.js.svn-base" />
+    <None Include="Scripts\vendor\.svn\text-base\tinycarousal.js.svn-base" />
+    <Content Include="Views\BackOffice\AdminPostLogin.cshtml" />
+    <Content Include="Views\BackOffice\ContentManagement\ConfigureDownloads.cshtml" />
+    <Content Include="Views\BackOffice\ContentManagement\ConfigureFaqs.cshtml" />
+    <Content Include="Views\BackOffice\ContentManagement\ContentManagement.cshtml" />
+    <Content Include="Views\BackOffice\ContentManagement\HolidayConfig.cshtml" />
+    <Content Include="Views\BackOffice\EmailLog\EmailLog.cshtml" />
+    <Content Include="Views\BackOffice\Order\BulkUpload.cshtml" />
+    <Content Include="Views\BackOffice\Order\OrderHistory.cshtml" />
+    <Content Include="Views\BackOffice\Order\OrderEntry.cshtml" />
+    <Content Include="Views\BackOffice\Order\VarianceHandling.cshtml" />
+    <Content Include="Views\BackOffice\ProfileManagement\AdminProfile.cshtml" />
+    <Content Include="Views\BackOffice\ProfileManagement\CountryAssignment.cshtml" />
+    <Content Include="Views\BackOffice\Reports\Reports.cshtml" />
+    <Content Include="Views\BackOffice\RoutingMatrix\CreateNewRule.cshtml" />
+    <Content Include="Views\BackOffice\RoutingMatrix\ManualTrackingAllocation.cshtml" />
+    <Content Include="Views\BackOffice\RoutingMatrix\RuleEntry.cshtml" />
+    <Content Include="Views\BackOffice\RoutingMatrix\TrackingRangeAllocation.cshtml" />
+    <Content Include="Views\BackOffice\MasterCodeConfiguration.cshtml" />
+    <Content Include="Views\CustomerPortal\TrackingRecordsIframe.cshtml" />
+    <Content Include="Views\CustomerPortal\TrackingRecordsPopup.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EbayAndBulkUploadTemplate.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EbayAndBulkUploadTemplate.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\cn22.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cn221.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\cn22_AU.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cn22_AU1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\cn22_compact.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cn22_compact1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\cn22_compact_SG.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cn22_compact_SG1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\cn22_SG.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cn22_SG1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\cn22_US.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cn22_US1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\Commercialinvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Commercialinvoice.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\connote.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>connote1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\connoteairparcel.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>connoteairparcel.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\mainfest.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>mainfest.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\rejectiontransactiondetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rejectiontransactiondetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\TaxInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TaxInvoice.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50704</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
